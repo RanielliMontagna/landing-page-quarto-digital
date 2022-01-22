@@ -9,6 +9,11 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
     user-select: none;
   }
 
+  h1 {
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
   body {
     background-color: ${({ theme }) => theme.color.white};
   }

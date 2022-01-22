@@ -13,7 +13,7 @@ const white = '#ffffff';
 const darkGray = '#575757';
 const whiteGray = '#8b8b8b';
 
-const theme = {
+export const theme = {
   fontSizes,
   color: {
     primary,
