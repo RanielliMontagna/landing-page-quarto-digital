@@ -16,7 +16,7 @@ const PageHeader: FC<PageHeaderProps> = ({ titulo, buttons }) => {
       </div>
       <div>
         {buttons?.map((button) => {
-          return <Button {...button}>Novo cliente</Button>;
+          return <Button {...button}>{button.children}</Button>;
         })}
       </div>
     </styled.DivPageHeader>

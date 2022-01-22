@@ -1,17 +1,17 @@
 import { PageHeader } from 'components';
 import { IoAdd } from 'react-icons/io5';
 
-export const Clientes = () => {
+export const Produtos = () => {
   return (
     <div>
       <PageHeader
-        titulo="Clientes"
+        titulo="Produtos"
         buttons={[
           {
-            children: 'Novo cliente',
+            children: 'Novo produto',
             variant: 'outlined',
             startIcon: <IoAdd />,
-            onClick: () => console.log('teste'), //TODO onClick novo cliente
+            onClick: () => console.log('teste'), //TODO onClick novo produto
           },
         ]}
       />
@@ -19,4 +19,4 @@ export const Clientes = () => {
   );
 };
 
-export default Clientes;
+export default Produtos;
