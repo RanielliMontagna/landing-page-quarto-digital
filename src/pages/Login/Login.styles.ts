@@ -11,30 +11,32 @@ export const DivBase = styled.div`
 // Div Esquerda - Layout
 export const DivLayout = styled.div`
   background-color: ${(props) => `${props.theme.color.primary}`};
-  width: 50%;
-  height: 100vh;
+  width: calc(50% - 64px);
+  height: calc(100% - 64px);
+  padding: 32px;
   display: flex;
   flex-direction: column;
+
+  span {
+    background-color: ${(props) => `${props.theme.color.dark}`};
+    padding: 1px 6px 5px 6px;
+    border-radius: 4px;
+  }
 
   @media (max-width: 1024px) {
     display: none;
   }
 `;
 
-export const DivLayoutConteudo = styled.div`
-  margin-top: 32px;
-  margin-left: 32px;
-
-  span {
-    background-color: black;
-    padding: 1px 6px 5px 6px;
-    border-radius: 4px;
-  }
+export const DivLayoutHeader = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const DivLayoutImagem = styled.div`
   height: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
 `;
 
@@ -81,10 +83,6 @@ export const Copyright = styled.p`
   @media (max-width: 1024px) {
     bottom: 16px;
   }
-`;
-
-export const Logo = styled.div`
-  width: 100%;
 `;
 
 export const DivField = styled.div`

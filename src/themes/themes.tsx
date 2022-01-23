@@ -7,7 +7,7 @@ fontSizes.md = fontSizes[2];
 fontSizes.lg = fontSizes[3];
 fontSizes.xl = fontSizes[3];
 
-const primary = '#F3485C';
+const primary = '#384B78';
 const dark = '#22252C';
 const white = '#ffffff';
 const darkGray = '#575757';

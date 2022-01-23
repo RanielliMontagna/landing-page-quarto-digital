@@ -11,16 +11,12 @@ interface DrawerProps {}
 const Drawer: FC<DrawerProps> = () => {
   const titleTooltip = (title: string) => <h3 style={{ fontWeight: 500, fontSize: '16px' }}>{title}</h3>;
   const navigate = useNavigate();
+  const logo = '/static/logo/quartoDigitalPrimaria.svg';
 
   return (
     <styled.DivMenu>
       <styled.DivLogo>
-        <div>
-          <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-            <h1 style={{ fontWeight: 800, fontSize: '50px', fontFamily: 'Qanelas Soft' }}>Q</h1>
-            <h3 style={{ fontFamily: 'Qanelas Soft', fontSize: '20px' }}>D</h3>
-          </div>
-        </div>
+        <img src={logo} alt={logo} style={{ width: '60px' }} />
       </styled.DivLogo>
       <Botoes />
       <Tooltip title={titleTooltip('Sair')} placement="right" arrow>

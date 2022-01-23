@@ -14,6 +14,7 @@ export const DivLogo = styled.div`
   justify-content: center;
   align-items: center;
   height: 80px;
+  background-color: ${(props) => `${props.theme.color.white}`};
 `;
 
 //Div Botões
@@ -53,6 +54,7 @@ export const DivRodape = styled.div`
   align-items: center;
   justify-content: center;
   box-shadow: inset 0 10px 9px -7px rgba(0, 0, 0, 0.3);
+  background-color: ${(props) => `${props.theme.color.white}`};
 
   &:hover {
     background-color: ${(props) => `${props.theme.color.dark}`}80;
