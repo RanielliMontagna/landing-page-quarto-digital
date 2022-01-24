@@ -8,7 +8,7 @@ require('dotenv').config();
 
 if (process.env.REACT_APP_ENV !== 'development') {
   Sentry.init({
-    dsn: 'https://4102e25d5a3a4745825cf5f22b09ebfc@o1065447.ingest.sentry.io/6057145',
+    dsn: 'https://4766f4d4836a41b083c752f56d95b56a@o1065447.ingest.sentry.io/6165969',
     integrations: [new Integrations.BrowserTracing()],
     normalizeDepth: 10,
   });
