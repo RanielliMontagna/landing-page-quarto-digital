@@ -1,26 +1,31 @@
 import { ThemeProvider } from 'styled-components';
 
-const fontSizes: any = ['12px', '14px', '16px', '20px', '24px'];
-fontSizes.xs = fontSizes[0];
-fontSizes.sm = fontSizes[1];
-fontSizes.md = fontSizes[2];
-fontSizes.lg = fontSizes[3];
-fontSizes.xl = fontSizes[3];
+const tamanhoFonte: any = ['12px', '14px', '16px', '20px', '24px'];
+tamanhoFonte.xs = tamanhoFonte[0];
+tamanhoFonte.sm = tamanhoFonte[1];
+tamanhoFonte.md = tamanhoFonte[2];
+tamanhoFonte.lg = tamanhoFonte[3];
+tamanhoFonte.xl = tamanhoFonte[3];
 
-const primary = '#384B78';
-const dark = '#22252C';
-const white = '#ffffff';
-const darkGray = '#575757';
-const whiteGray = '#8b8b8b';
+const azulQD = '#384B78';
+const pretoQD = '#22252C';
+const brancoQD = '#f1f1f1';
+const cinzaEscuroQD = '#575757';
+const cinzaClaroQD = '#8b8b8b';
 
 export const theme = {
-  fontSizes,
-  color: {
-    primary,
-    dark,
-    white,
-    darkGray,
-    whiteGray,
+  tamanhoFonte,
+  cores: {
+    primaria: azulQD,
+    secundaria: pretoQD,
+    terciaria: brancoQD,
+  },
+  coresExtras: {
+    cinzaClaro: cinzaClaroQD,
+    cinzaEscuro: cinzaEscuroQD,
+    branco: brancoQD,
+    preto: pretoQD,
+    azul: azulQD,
   },
 };
 

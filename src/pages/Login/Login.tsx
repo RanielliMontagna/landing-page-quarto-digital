@@ -7,10 +7,10 @@ const Login = () => {
   return (
     <styled.DivBase>
       <styled.DivLayout>
-        <styled.DivLayoutHeader>
+        <styled.DivLayoutHeader className="header">
           <div style={{ marginRight: '32px' }}>
             {/* Logo */}
-            <img src="./static/logo/quartoDigitalPreto.svg" alt="logo" width="200vh" />
+            <img src="./static/logo/quartoDigitalBranco.svg" alt="logo" width="200vh" />
           </div>
           <div>
             {/* Texto */}
@@ -22,7 +22,7 @@ const Login = () => {
         </styled.DivLayoutHeader>
         {/* Imagem ilustrativa */}
         <styled.DivLayoutImagem>
-          <img src="./static/svgs/loginIllustration.svg" alt="loginIllustration" style={{ width: '50vh' }}></img>
+          <img src="./static/svgs/loginIllustration.svg" alt="loginIllustration"></img>
         </styled.DivLayoutImagem>
       </styled.DivLayout>
       {/* Login */}

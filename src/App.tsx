@@ -1,11 +1,15 @@
 import { Theme, GlobalStyles } from 'themes';
 import { Router } from 'routes';
+import { Provider } from 'react-redux';
+import { store } from 'store';
 
 export const App = () => {
   return (
-    <Theme>
-      <GlobalStyles />
-      <Router />
-    </Theme>
+    <Provider store={store}>
+      <Theme>
+        <GlobalStyles />
+        <Router />
+      </Theme>
+    </Provider>
   );
 };

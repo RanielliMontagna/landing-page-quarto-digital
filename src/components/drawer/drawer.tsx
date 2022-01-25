@@ -11,7 +11,7 @@ interface DrawerProps {}
 const Drawer: FC<DrawerProps> = () => {
   const titleTooltip = (title: string) => <h3 style={{ fontWeight: 500, fontSize: '16px' }}>{title}</h3>;
   const navigate = useNavigate();
-  const logo = '/static/logo/quartoDigitalPrimaria.svg';
+  const logo = '/static/logo/quartoDigitalBranco.svg';
 
   return (
     <styled.DivMenu>
@@ -21,7 +21,9 @@ const Drawer: FC<DrawerProps> = () => {
       <Botoes />
       <Tooltip title={titleTooltip('Sair')} placement="right" arrow>
         <styled.DivRodape onClick={() => navigate('/login')}>
-          <ImExit size={24} />
+          <styled.BotaoSair>
+            <ImExit size={24} />
+          </styled.BotaoSair>
         </styled.DivRodape>
       </Tooltip>
     </styled.DivMenu>

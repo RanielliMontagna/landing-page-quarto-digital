@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 //Div Menu
 export const DivMenu = styled.div`
-  height: 100vh;
-  width: 80px;
-  color: ${(props) => `${props.theme.color.primary}`};
+  height: 100%;
+  width: 90px;
+  color: ${({ theme }) => theme.coresExtras.branco};
 `;
 
 //Div Logo
@@ -14,17 +14,22 @@ export const DivLogo = styled.div`
   justify-content: center;
   align-items: center;
   height: 80px;
-  background-color: ${(props) => `${props.theme.color.white}`};
+  background-color: ${({ theme }) => theme.cores.primaria};
 `;
 
 //Div Botões
 export const DivBotoes = styled.div`
-  box-shadow: inset 0 10px 9px -7px rgba(0, 0, 0, 0.3);
-  width: 100%;
-  padding: 8px 0px;
-  background-color: ${(props) => `${props.theme.color.white}`};
-  height: calc(100% - 166px);
+  box-shadow: inset 0 10px 9px -7px rgba(0, 0, 0, 0.3), inset 0 -11px 9px -7px rgba(0, 0, 0, 0.3);
+  background-color: ${({ theme }) => theme.cores.primaria};
   overflow-y: auto;
+  width: 100%;
+  height: calc(100% - 166px);
+  padding: 8px 0px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
   ::-webkit-scrollbar {
     width: 0px;
   }
@@ -39,9 +44,10 @@ export const BotaoDrawer = styled.button`
   border: none;
   display: flex;
   justify-content: center;
-  color: ${(props) => `${props.theme.color.primary}`};
+  color: ${({ theme }) => theme.coresExtras.branco};
   &:hover {
-    background-color: ${(props) => `${props.theme.color.dark}`}80;
+    background-color: ${({ theme }) => theme.coresExtras.preto}80;
+    transition: 0.5s;
   }
 `;
 
@@ -53,10 +59,17 @@ export const DivRodape = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 10px 9px -7px rgba(0, 0, 0, 0.3);
-  background-color: ${(props) => `${props.theme.color.white}`};
+  background-color: ${({ theme }) => theme.cores.primaria};
+`;
 
+export const BotaoSair = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover {
-    background-color: ${(props) => `${props.theme.color.dark}`}80;
+    background-color: ${({ theme }) => theme.coresExtras.preto}80;
+    transition: 0.4s;
   }
 `;

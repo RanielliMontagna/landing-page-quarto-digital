@@ -1,4 +1,4 @@
-import { Private } from 'layout';
+import { Private } from 'components';
 import { FC } from 'react';
 
 interface RotaProps {

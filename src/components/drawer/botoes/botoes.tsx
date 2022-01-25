@@ -1,6 +1,6 @@
 import { Tooltip } from '@mui/material';
 import { FaBoxes, FaUsers } from 'react-icons/fa';
-import { IoBedSharp } from 'react-icons/io5';
+import { IoBedSharp, IoSettingsSharp } from 'react-icons/io5';
 import { MdRoomService, MdDashboard } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import * as styled from '../drawer.styles';
@@ -11,31 +11,40 @@ const Botoes = () => {
 
   return (
     <styled.DivBotoes>
-      <Tooltip title={titleTooltip('Dashboard')} placement="right" arrow>
-        <styled.BotaoDrawer onClick={() => navigate('/dashboard')}>
-          <MdDashboard size={24} />
-        </styled.BotaoDrawer>
-      </Tooltip>
-      <Tooltip title={titleTooltip('Quartos')} placement="right" arrow>
-        <styled.BotaoDrawer onClick={() => navigate('/quartos')}>
-          <IoBedSharp size={24} />
-        </styled.BotaoDrawer>
-      </Tooltip>
-      <Tooltip title={titleTooltip('Clientes')} placement="right" arrow>
-        <styled.BotaoDrawer onClick={() => navigate('/clientes')}>
-          <FaUsers size={24} />
-        </styled.BotaoDrawer>
-      </Tooltip>
-      <Tooltip title={titleTooltip('Produtos')} placement="right" arrow>
-        <styled.BotaoDrawer onClick={() => navigate('/produtos')}>
-          <FaBoxes size={24} />
-        </styled.BotaoDrawer>
-      </Tooltip>
-      <Tooltip title={titleTooltip('Serviços')} placement="right" arrow>
-        <styled.BotaoDrawer onClick={() => navigate('/servicos')}>
-          <MdRoomService size={24} />
-        </styled.BotaoDrawer>
-      </Tooltip>
+      <div>
+        <Tooltip title={titleTooltip('Dashboard')} placement="right" arrow>
+          <styled.BotaoDrawer onClick={() => navigate('/dashboard')}>
+            <MdDashboard size={24} />
+          </styled.BotaoDrawer>
+        </Tooltip>
+        <Tooltip title={titleTooltip('Quartos')} placement="right" arrow>
+          <styled.BotaoDrawer onClick={() => navigate('/quartos')}>
+            <IoBedSharp size={24} />
+          </styled.BotaoDrawer>
+        </Tooltip>
+        <Tooltip title={titleTooltip('Clientes')} placement="right" arrow>
+          <styled.BotaoDrawer onClick={() => navigate('/clientes')}>
+            <FaUsers size={24} />
+          </styled.BotaoDrawer>
+        </Tooltip>
+        <Tooltip title={titleTooltip('Produtos')} placement="right" arrow>
+          <styled.BotaoDrawer onClick={() => navigate('/produtos')}>
+            <FaBoxes size={24} />
+          </styled.BotaoDrawer>
+        </Tooltip>
+        <Tooltip title={titleTooltip('Serviços')} placement="right" arrow>
+          <styled.BotaoDrawer onClick={() => navigate('/servicos')}>
+            <MdRoomService size={24} />
+          </styled.BotaoDrawer>
+        </Tooltip>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+        <Tooltip title={titleTooltip('Configurações')} placement="right" arrow>
+          <styled.BotaoDrawer onClick={() => navigate('/configuracoes')}>
+            <IoSettingsSharp size={24} />
+          </styled.BotaoDrawer>
+        </Tooltip>
+      </div>
     </styled.DivBotoes>
   );
 };

@@ -14,7 +14,8 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
     letter-spacing: 1px;
   }
 
-  body {
-    background-color: ${({ theme }) => theme.color.white};
+  body, html {
+    height: 100vh;
+    background-color: ${({ theme }) => theme.cores.secundaria};
   }
 `;

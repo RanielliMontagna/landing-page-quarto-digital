@@ -8,7 +8,7 @@ export const Servicos = () => {
         titulo="Servicos"
         buttons={[
           {
-            children: 'Novo servico',
+            children: 'Novo serviço',
             variant: 'outlined',
             startIcon: <IoAdd />,
             onClick: () => console.log('teste'), //TODO onClick novo servico
