@@ -9,4 +9,11 @@ export const DivPageHeader = styled.div`
   h1 {
     text-transform: capitalize;
   }
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+    > div {
+      margin-bottom: 8px;
+    }
+  }
 `;

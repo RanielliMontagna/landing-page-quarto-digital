@@ -3,7 +3,7 @@ import { Dashboard, Clientes, Login, Quartos, Produtos, Servicos } from 'pages';
 
 import Rota from './rota';
 import Configuracoes from 'pages/Configuracoes/Configuracoes';
-import AppProvider from 'store/app/appProvider/appProvider';
+import { AppProvider } from 'store';
 
 export const Router = () => {
   return (

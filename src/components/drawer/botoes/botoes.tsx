@@ -1,7 +1,7 @@
 import { Tooltip } from '@mui/material';
 import { FaBoxes, FaUsers } from 'react-icons/fa';
-import { IoBedSharp, IoSettingsSharp } from 'react-icons/io5';
-import { MdRoomService, MdDashboard } from 'react-icons/md';
+import { IoBedSharp } from 'react-icons/io5';
+import { MdDashboard, MdRoomService } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import * as styled from '../drawer.styles';
 
@@ -38,13 +38,7 @@ const Botoes = () => {
           </styled.BotaoDrawer>
         </Tooltip>
       </div>
-      <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-        <Tooltip title={titleTooltip('Configurações')} placement="right" arrow>
-          <styled.BotaoDrawer onClick={() => navigate('/configuracoes')}>
-            <IoSettingsSharp size={24} />
-          </styled.BotaoDrawer>
-        </Tooltip>
-      </div>
+      <div style={{ display: 'flex', alignItems: 'flex-end' }}></div>
     </styled.DivBotoes>
   );
 };

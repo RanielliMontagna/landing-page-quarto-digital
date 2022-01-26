@@ -11,10 +11,10 @@ interface PageHeaderProps {
 const PageHeader: FC<PageHeaderProps> = ({ titulo, buttons }) => {
   return (
     <styled.DivPageHeader>
-      <div>
+      <div className="divTitulo">
         <h1>{titulo}</h1>
       </div>
-      <div>
+      <div className="botoes">
         {buttons?.map((button) => {
           return <Button {...button}>{button.children}</Button>;
         })}
