@@ -1,111 +1,32 @@
 import styled from 'styled-components';
 
-// Div Geral
-export const DivBase = styled.div`
-  display: flex;
-  background-color: ${({ theme }) => theme.cores.terciaria};
-  color: ${({ theme }) => theme.cores.secundaria};
+//Login
+export const DivLogin = styled.div`
+  width: 50%;
   height: 100vh;
-`;
+  background-color: ${({ theme }) => theme.coresExtras.branco};
+  overflow: auto;
 
-// Div Esquerda - Layout
-export const DivLayout = styled.div`
-  background-color: ${({ theme }) => theme.cores.primaria};
-  width: calc(50% - 64px);
-  height: calc(100% - 64px);
-  padding: 32px;
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+
   display: flex;
+  align-items: center;
   flex-direction: column;
-  color: ${({ theme }) => theme.coresExtras.branco};
-
-  .header {
-    @media (max-width: 1024px) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
-  }
-
-  span {
-    background-color: ${({ theme }) => theme.coresExtras.preto};
-    padding: 1px 6px 5px 6px;
-    border-radius: 4px;
-  }
-
-  @media (max-width: 1024px) {
-    h2 {
-      display: none;
-    }
-  }
-
-  @media (max-width: 960px) {
-    display: none;
-  }
-`;
-
-export const DivLayoutHeader = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const DivLayoutImagem = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
   justify-content: center;
 
   > img {
-    width: 50vh;
+    padding: 16px 0px 0px 0px;
   }
 
-  @media (max-width: 1024px) {
-    display: none;
-  }
-`;
-
-// Div Direita - Login
-export const DivConteudo = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  width: 50%;
-  height: 100vh;
-  color: ${({ theme }) => theme.cores.secundaria};
-
-  @media (max-width: 960px) {
+  @media (max-width: 950px) {
     width: 100%;
+    overflow: auto;
   }
 
-  hr {
-    border: none;
-    border-radius: 5px;
-
-    width: 100px;
-    height: 3px;
-    color: ${({ theme }) => theme.cores.primaria};
-    background-color: ${({ theme }) => theme.cores.primaria};
-  }
-`;
-
-export const DivFields = styled.div`
-  width: 70%;
-
-  @media (min-width: 1024px) {
-    width: 60%;
-  }
-`;
-
-export const Copyright = styled.p`
-  position: absolute;
-  bottom: 32px;
-  color: ${({ theme }) => theme.coresExtras.cinzaEscuro};
-  font-weight: 100;
-
-  @media (max-width: 1024px) {
-    bottom: 16px;
+  @media (max-height: 600px) {
+    justify-content: unset;
   }
 `;
 
@@ -121,7 +42,7 @@ export const Label = styled.p``;
 
 export const Input = styled.input`
   font-size: ${(props) => `${props.theme.tamanhoFonte.sm}`};
-  color: ${({ theme }) => theme.cores.secundaria};
+  color: ${({ theme }) => theme.coresExtras.preto};
   width: calc(100% - 20px);
   margin: 8px 0px 32px 0px;
   padding: 15px 10px;
@@ -155,7 +76,8 @@ export const ForgotPassword = styled.div`
 `;
 
 export const ButtonEnter = styled.button`
-  margin-top: 32px;
+  margin: 32px 0px;
+  padding: 10px 0px;
   width: 80%;
   height: 44px;
   background-color: ${({ theme }) => theme.cores.primaria};
@@ -174,4 +96,56 @@ export const ButtonEnter = styled.button`
   &:hover {
     background-color: ${({ theme }) => theme.cores.primaria}90;
   }
+`;
+
+//Layout
+export const DivLayout = styled.div`
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ theme }) => theme.cores.primaria};
+
+  @media (max-width: 950px) {
+    display: none;
+  }
+
+  h1 {
+    color: ${({ theme }) => theme.coresExtras.branco};
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 32px;
+
+    @media (max-height: 350px) {
+      margin-top: 0px;
+    }
+  }
+
+  h2 {
+    color: ${({ theme }) => theme.coresExtras.branco};
+    font-weight: 300;
+    text-align: center;
+    padding: 0px 10px;
+    font-size: 20px;
+  }
+`;
+
+export const DivIlustracao = styled.div`
+  > img {
+    width: 50vh;
+  }
+
+  @media (max-height: 350px) {
+    display: none;
+  }
+`;
+
+export const Divider = styled.div`
+  background-color: ${({ theme }) => theme.coresExtras.branco};
+  width: 100px;
+  height: 5px;
+  margin: 0px 0px 16px 0px;
+  border-radius: 10px;
 `;

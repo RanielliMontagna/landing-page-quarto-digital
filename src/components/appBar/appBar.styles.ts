@@ -70,6 +70,7 @@ export const Menu = styled(SzhsinMenu)`
 `;
 
 export const MenuItemIcone = styled.div`
+  margin-top: 2px;
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.cores.secundaria};

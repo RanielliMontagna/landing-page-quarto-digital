@@ -3,33 +3,14 @@ import * as styled from './Login.styles';
 
 const Login = () => {
   const navigate = useNavigate();
+  const logo = '/static/logo/quartoDigitalPrimaria.svg';
 
   return (
-    <styled.DivBase>
-      <styled.DivLayout>
-        <styled.DivLayoutHeader className="header">
-          <div style={{ marginRight: '32px' }}>
-            {/* Logo */}
-            <img src="./static/logo/quartoDigitalBranco.svg" alt="logo" width="200vh" />
-          </div>
-          <div>
-            {/* Texto */}
-            <h2 style={{ fontWeight: 400 }}>
-              Tenha o <span>controle</span> da situação <br />
-              para aumentar sua produtividade.
-            </h2>
-          </div>
-        </styled.DivLayoutHeader>
-        {/* Imagem ilustrativa */}
-        <styled.DivLayoutImagem>
-          <img src="./static/svgs/loginIllustration.svg" alt="loginIllustration"></img>
-        </styled.DivLayoutImagem>
-      </styled.DivLayout>
-      {/* Login */}
-      <styled.DivConteudo>
-        <h1>Seja bem vindo!</h1>
-        <hr style={{ marginBottom: '50px' }} />
-        {/* Email */}
+    <div style={{ display: 'flex', overflow: 'hidden' }}>
+      <styled.DivLogin>
+        {/* Logo */}
+        <img src={logo} alt={logo} style={{ width: '250px' }} />
+        {/* Login */}
         <styled.DivField>
           <styled.Label>E-mail</styled.Label>
           <styled.Input type="email" placeholder="Seu e-mail" />
@@ -50,11 +31,21 @@ const Login = () => {
         <styled.ButtonEnter type="submit" onClick={() => navigate('/dashboard')}>
           Entrar
         </styled.ButtonEnter>
+      </styled.DivLogin>
 
-        {/* Copyright */}
-        <styled.Copyright>© Copyright 2022 Ranielli. Todos os direitos reservados.</styled.Copyright>
-      </styled.DivConteudo>
-    </styled.DivBase>
+      <styled.DivLayout>
+        <styled.DivIlustracao>
+          {/* Logo */}
+          <img src="./static/svgs/loginIllustration.svg" alt="loginIllustration"></img>
+        </styled.DivIlustracao>
+        <h1>Seja bem vindo!</h1>
+        <styled.Divider></styled.Divider>
+        <h2>
+          Simplifique suas tarefas e tenha mais tempo para se <br />
+          dedicar ao bem estar dos seus hóspedes.
+        </h2>
+      </styled.DivLayout>
+    </div>
   );
 };
 
