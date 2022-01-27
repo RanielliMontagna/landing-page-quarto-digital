@@ -1,6 +1,6 @@
-import { AppBar, Drawer } from 'components';
 import { FC } from 'react';
-import ConfiguracoesProvider from 'store/config/configuracoesProvider/configuracoesProvider';
+import { ConfiguracoesProvider } from 'store';
+import { AppBar, Drawer } from 'components';
 import * as styled from './private.styles';
 
 export interface PrivateProps {

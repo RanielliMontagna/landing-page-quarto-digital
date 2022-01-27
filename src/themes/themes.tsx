@@ -1,3 +1,4 @@
+import { useApp } from 'store';
 import { ThemeProvider } from 'styled-components';
 
 const tamanhoFonte: any = ['12px', '14px', '16px', '20px', '24px'];
@@ -12,8 +13,9 @@ const pretoQD = '#22252C';
 const brancoQD = '#f1f1f1';
 const cinzaEscuroQD = '#575757';
 const cinzaClaroQD = '#8b8b8b';
+const pretoAppBar = '#2b2f38';
 
-export const theme = {
+export const temaClaro = {
   tamanhoFonte,
   cores: {
     primaria: azulQD,
@@ -23,14 +25,33 @@ export const theme = {
   coresExtras: {
     cinzaClaro: cinzaClaroQD,
     cinzaEscuro: cinzaEscuroQD,
+    pretoAppBar: pretoAppBar,
     branco: brancoQD,
     preto: pretoQD,
     azul: azulQD,
   },
 };
 
-export type ThemeType = typeof theme;
+export const temaEscuro = {
+  tamanhoFonte,
+  cores: {
+    primaria: azulQD,
+    secundaria: brancoQD,
+    terciaria: pretoQD,
+  },
+  coresExtras: {
+    cinzaClaro: cinzaClaroQD,
+    cinzaEscuro: cinzaEscuroQD,
+    pretoAppBar: pretoAppBar,
+    branco: brancoQD,
+    preto: pretoQD,
+    azul: azulQD,
+  },
+};
+
+export type ThemeType = typeof temaClaro;
 
 export const Theme: React.FC = ({ children }) => {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  const { tema } = useApp();
+  return <ThemeProvider theme={tema === 'escuro' ? temaEscuro : temaClaro}>{children}</ThemeProvider>;
 };

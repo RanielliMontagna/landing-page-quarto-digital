@@ -4,6 +4,7 @@ import type { AppSlice } from './appSlice.types';
 
 export const initialState: AppSlice = {
   loading: false,
+  tema: localStorage.getItem('tema'),
 };
 
 const appSlice = createSlice({
@@ -11,7 +12,11 @@ const appSlice = createSlice({
   initialState,
   reducers: {
     clearApp: (state) => {
-      state = initialState;
+      state.loading = initialState.loading;
+    },
+    storeTema: (state, { payload }) => {
+      localStorage.setItem('tema', payload);
+      state.tema = payload;
     },
   },
 });

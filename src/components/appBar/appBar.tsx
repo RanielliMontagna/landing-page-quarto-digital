@@ -1,19 +1,19 @@
 import { MenuDivider, MenuItem } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
-import { IoChevronDownOutline, IoExitOutline, IoSettingsOutline, IoPersonOutline } from 'react-icons/io5';
 import { FiMoon, FiSun } from 'react-icons/fi';
-
+import { IoChevronDownOutline, IoExitOutline, IoPersonOutline, IoSettingsOutline } from 'react-icons/io5';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { theme } from 'themes';
+import { AppActions, useApp } from 'store';
 import * as styled from './appBar.styles';
 
 const MenuItemConteudo = (titulo: string, icone: JSX.Element, onClick: () => void) => {
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }} onClick={onClick}>
-      <div style={{ display: 'flex', alignItems: 'center', color: theme.cores.secundaria }}>{icone}</div>
+    <div style={{ display: 'flex', alignItems: 'center', width: '100%' }} onClick={onClick}>
+      <styled.MenuItemIcone>{icone}</styled.MenuItemIcone>
       <div style={{ margin: '0px 8px' }}>
-        <p style={{ fontWeight: 300, color: theme.cores.secundaria }}>{titulo}</p>
+        <styled.MenuItemTitulo>{titulo}</styled.MenuItemTitulo>
       </div>
     </div>
   );
@@ -21,19 +21,21 @@ const MenuItemConteudo = (titulo: string, icone: JSX.Element, onClick: () => voi
 
 const AppBar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { tema } = useApp();
 
   const _handleMudarTema = () => {
-    //   if (localStorage.getItem('tema') === 'escuro') {
-    //     localStorage.setItem('tema', 'claro');
-    //   } else {
-    //     localStorage.setItem('tema', 'escuro');
-    //   }
+    if (tema === 'escuro') {
+      dispatch(AppActions.storeTema('claro'));
+    } else {
+      dispatch(AppActions.storeTema('escuro'));
+    }
   };
 
   return (
-    <styled.DivAppBar>
+    <styled.DivAppBar tema={tema}>
       <styled.DivTema onClick={_handleMudarTema}>
-        {localStorage.getItem('tema') === 'escuro' ? <FiMoon size={24} /> : <FiSun size={24} />}
+        {tema === 'escuro' ? <FiMoon size={24} /> : <FiSun size={24} />}
       </styled.DivTema>
       <styled.DivPerfil>
         <styled.Menu
@@ -43,7 +45,7 @@ const AppBar = () => {
                 <styled.styledAvatar alt="Capivarus Hotel" src="Capivarus Hotel" variant="rounded" />
               </div>
               <div style={{ padding: '8px' }}>
-                <p style={{ fontWeight: 300 }}>Capivarus Hotel</p>
+                <styled.TituloPerfil>Capivarus Hotel</styled.TituloPerfil>
               </div>
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <IoChevronDownOutline size={16} />
