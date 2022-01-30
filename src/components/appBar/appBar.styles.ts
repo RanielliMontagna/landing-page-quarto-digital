@@ -52,10 +52,14 @@ export const styledAvatar = styled(Avatar)`
   background-color: ${({ theme }) => theme.cores.primaria} !important;
 `;
 
-export const Menu = styled(SzhsinMenu)`
+export const Menu = styled(SzhsinMenu)<{ tema: string | null }>`
   > ul {
-    width: 205px;
-    background-color: ${({ theme }) => theme.cores.terciaria};
+    background-color: ${({ theme, tema }) =>
+      tema === 'escuro' ? theme.coresExtras.pretoAppBar : theme.cores.terciaria};
+  }
+  > ul > div.szh-menu__arrow {
+    background-color: ${({ theme, tema }) =>
+      tema === 'escuro' ? theme.coresExtras.pretoAppBar : theme.cores.terciaria};
   }
   > ul > li.szh-menu__divider {
     background-color: ${({ theme }) => theme.cores.secundaria}20;

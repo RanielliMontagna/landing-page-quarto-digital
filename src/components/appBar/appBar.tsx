@@ -8,9 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import { AppActions, useApp } from 'store';
 import * as styled from './appBar.styles';
 
-const MenuItemConteudo = (titulo: string, icone: JSX.Element, onClick: () => void) => {
+const _menuItemConteudo = (titulo: string, icone: JSX.Element) => {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', width: '100%' }} onClick={onClick}>
+    <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
       <styled.MenuItemIcone>{icone}</styled.MenuItemIcone>
       <div style={{ margin: '0px 8px' }}>
         <styled.MenuItemTitulo>{titulo}</styled.MenuItemTitulo>
@@ -39,6 +39,9 @@ const AppBar = () => {
       </styled.DivTema>
       <styled.DivPerfil>
         <styled.Menu
+          tema={tema}
+          align="center"
+          arrow
           menuButton={
             <styled.DivMenu>
               <div>
@@ -54,12 +57,14 @@ const AppBar = () => {
           }
           transition
         >
-          <MenuItem>
-            {MenuItemConteudo('Configurações', <IoSettingsOutline size={16} />, () => navigate('/configuracoes'))}
+          <MenuItem onClick={() => navigate('/configuracoes')}>
+            {_menuItemConteudo('Configurações', <IoSettingsOutline size={16} />)}
           </MenuItem>
-          <MenuItem>{MenuItemConteudo('Meu usuário', <IoPersonOutline size={16} />, () => null)}</MenuItem>
+          <MenuItem onClick={() => null}>{_menuItemConteudo('Meu usuário', <IoPersonOutline size={16} />)}</MenuItem>
           <MenuDivider />
-          <MenuItem>{MenuItemConteudo('Sair', <IoExitOutline size={16} />, () => navigate('/login'))}</MenuItem>
+          <MenuItem onClick={() => navigate('/login')}>
+            {_menuItemConteudo('Sair', <IoExitOutline size={16} />)}
+          </MenuItem>
         </styled.Menu>
       </styled.DivPerfil>
     </styled.DivAppBar>
