@@ -5,3 +5,17 @@ export const DivChildren = styled.div`
   color: ${({ theme }) => theme.cores.secundaria};
   background-color: ${({ theme }) => theme.cores.terciaria};
 `;
+
+export const DivDrawer = styled.div`
+  @media (max-width: 400px) {
+    display: none;
+  }
+`;
+
+export const DivDrawerMobile = styled.div`
+  display: none;
+
+  @media (max-width: 400px) {
+    display: block;
+  }
+`;

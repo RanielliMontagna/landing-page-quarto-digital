@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ConfiguracoesProvider } from 'store';
-import { AppBar, Drawer } from 'components';
+import { AppBar, Drawer, DrawerMobile } from 'components';
 import * as styled from './private.styles';
 
 export interface PrivateProps {
@@ -10,9 +10,12 @@ export interface PrivateProps {
 const Private: FC<PrivateProps> = ({ children }) => {
   return (
     <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
-      <div>
+      <styled.DivDrawer>
         <Drawer />
-      </div>
+      </styled.DivDrawer>
+      <styled.DivDrawerMobile>
+        <DrawerMobile />
+      </styled.DivDrawerMobile>
       <ConfiguracoesProvider>
         <styled.DivChildren>
           <AppBar />
