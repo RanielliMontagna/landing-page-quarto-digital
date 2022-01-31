@@ -1,6 +1,6 @@
 import { Tooltip } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { opcoesMenu } from '../drawer.static';
+import { OpcoesMenu } from '../drawer.static';
 import * as styled from '../drawer.styles';
 
 const Botoes = () => {
@@ -10,7 +10,7 @@ const Botoes = () => {
   return (
     <styled.DivBotoes>
       <div>
-        {opcoesMenu.map((value) => {
+        {OpcoesMenu.map((value) => {
           return (
             <Tooltip title={titleTooltip(value.titulo)} placement="right" arrow>
               <styled.BotaoDrawer onClick={() => navigate(value.caminho)}>{value.icone}</styled.BotaoDrawer>

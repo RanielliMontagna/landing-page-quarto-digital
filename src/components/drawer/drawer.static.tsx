@@ -3,7 +3,7 @@ import { AiOutlineAppstore } from 'react-icons/ai';
 import { MdOutlineRoomService, MdPeopleOutline } from 'react-icons/md';
 import { IoBedOutline } from 'react-icons/io5';
 
-export const opcoesMenu = [
+export const OpcoesMenu = [
   {
     titulo: 'Dashboard',
     caminho: '/dashboard',
