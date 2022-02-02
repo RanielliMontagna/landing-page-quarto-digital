@@ -1,4 +1,4 @@
-import { Size } from 'shared/shared.types';
+import { Size } from 'shared';
 import styled from 'styled-components';
 
 export const Button = styled.button<{ size: Size; fullWidth: boolean }>`
@@ -26,7 +26,7 @@ export const Button = styled.button<{ size: Size; fullWidth: boolean }>`
 
   &.outlined {
     border: 1px solid ${({ theme }) => theme.cores.secundaria};
-    background-color: ${({ theme }) => theme.cores.terciaria};
+    background-color: transparent;
     color: ${({ theme }) => theme.cores.secundaria};
 
     &:hover {

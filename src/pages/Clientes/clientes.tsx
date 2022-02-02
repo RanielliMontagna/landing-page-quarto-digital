@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { PageHeader } from 'components';
 import { IoAdd } from 'react-icons/io5';
+import NovoCliente from './modais/novoCliente/novoCliente';
 
 export const Clientes = () => {
+  const [novoCliente, setNovoCliente] = useState(false);
+
   return (
     <div>
       <PageHeader
@@ -11,10 +15,11 @@ export const Clientes = () => {
             children: 'Novo cliente',
             variant: 'outlined',
             startIcon: <IoAdd />,
-            onClick: () => console.log('teste'), //TODO onClick novo cliente
+            onClick: () => setNovoCliente(true),
           },
         ]}
       />
+      {novoCliente && <NovoCliente novoCliente={novoCliente} setNovoCliente={setNovoCliente} />}
     </div>
   );
 };

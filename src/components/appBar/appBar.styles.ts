@@ -88,6 +88,9 @@ export const MenuItemTitulo = styled.p`
 export const TituloPerfil = styled.p`
   font-weight: 300;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 250px;
 
   @media (max-width: 400px) {
     display: none;

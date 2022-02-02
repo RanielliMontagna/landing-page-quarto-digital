@@ -35,7 +35,7 @@ const AppBar = () => {
               <div>
                 <styled.styledAvatar alt="Capivarus Hotel" src="Capivarus Hotel" variant="rounded" />
               </div>
-              <div style={{ padding: '8px' }}>
+              <div style={{ padding: '8px', overflow: 'hidden' }}>
                 <styled.TituloPerfil>Capivarus Hotel</styled.TituloPerfil>
               </div>
               <div style={{ display: 'flex', alignItems: 'center' }}>

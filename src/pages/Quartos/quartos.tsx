@@ -1,7 +1,11 @@
 import { PageHeader } from 'components';
+import { useState } from 'react';
 import { IoAdd } from 'react-icons/io5';
+import NovoQuarto from './modais/novoQuarto/novoQuarto';
 
 export const Quartos = () => {
+  const [novoQuarto, setNovoQuarto] = useState(false);
+
   return (
     <div>
       <PageHeader
@@ -11,10 +15,11 @@ export const Quartos = () => {
             children: 'Novo quarto',
             variant: 'outlined',
             startIcon: <IoAdd />,
-            onClick: () => console.log('teste'), //TODO onClick novo quarto
+            onClick: () => setNovoQuarto(true),
           },
         ]}
       />
+      {novoQuarto && <NovoQuarto novoQuarto={novoQuarto} setNovoQuarto={setNovoQuarto} />}
     </div>
   );
 };

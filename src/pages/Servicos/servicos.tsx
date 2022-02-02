@@ -1,7 +1,11 @@
 import { PageHeader } from 'components';
+import { useState } from 'react';
 import { IoAdd } from 'react-icons/io5';
+import NovoServico from './modais/novoServico/novoServico';
 
 export const Servicos = () => {
+  const [novoServico, setNovoServico] = useState(false);
+
   return (
     <div>
       <PageHeader
@@ -11,10 +15,11 @@ export const Servicos = () => {
             children: 'Novo serviço',
             variant: 'outlined',
             startIcon: <IoAdd />,
-            onClick: () => console.log('teste'), //TODO onClick novo servico
+            onClick: () => setNovoServico(true),
           },
         ]}
       />
+      {novoServico && <NovoServico novoServico={novoServico} setNovoServico={setNovoServico} />}
     </div>
   );
 };

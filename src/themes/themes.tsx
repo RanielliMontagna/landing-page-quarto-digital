@@ -6,7 +6,7 @@ tamanhoFonte.xs = tamanhoFonte[0];
 tamanhoFonte.sm = tamanhoFonte[1];
 tamanhoFonte.md = tamanhoFonte[2];
 tamanhoFonte.lg = tamanhoFonte[3];
-tamanhoFonte.xl = tamanhoFonte[3];
+tamanhoFonte.xl = tamanhoFonte[4];
 
 const azulQD = '#384B78';
 const pretoQD = '#22252C';
