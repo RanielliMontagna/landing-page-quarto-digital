@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { Modal } from 'components';
 import { MdAdd } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
+import { AppActions } from 'store';
 
 interface NovoQuartoProps {
   novoQuarto: boolean;
@@ -8,12 +10,14 @@ interface NovoQuartoProps {
 }
 
 const NovoQuarto: FC<NovoQuartoProps> = ({ novoQuarto, setNovoQuarto }) => {
+  const dispatch = useDispatch();
+
   const _onClose = () => {
     setNovoQuarto(false);
   };
 
   const _handleSubmit = () => {
-    console.log('submit');
+    dispatch(AppActions.toggleNotificacao({ mensagem: 'Novo quarto adicionado com sucesso!' }));
     _onClose();
   };
 

@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { Modal } from 'components';
 import { MdAdd } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
+import { AppActions } from 'store';
 
 interface NovoClienteProps {
   novoCliente: boolean;
@@ -8,12 +10,14 @@ interface NovoClienteProps {
 }
 
 const NovoCliente: FC<NovoClienteProps> = ({ novoCliente, setNovoCliente }) => {
+  const dispatch = useDispatch();
+
   const _onClose = () => {
     setNovoCliente(false);
   };
 
   const _handleSubmit = () => {
-    console.log('submit');
+    dispatch(AppActions.toggleNotificacao({ mensagem: 'Novo cliente adicionado com sucesso!' }));
     _onClose();
   };
 

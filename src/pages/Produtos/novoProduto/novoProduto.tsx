@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { Modal } from 'components';
 import { MdAdd } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
+import { AppActions } from 'store';
 
 interface NovoProdutoProps {
   novoProduto: boolean;
@@ -8,12 +10,14 @@ interface NovoProdutoProps {
 }
 
 const NovoProduto: FC<NovoProdutoProps> = ({ novoProduto, setNovoProduto }) => {
+  const dispatch = useDispatch();
+
   const _onClose = () => {
     setNovoProduto(false);
   };
 
   const _handleSubmit = () => {
-    console.log('submit');
+    dispatch(AppActions.toggleNotificacao({ mensagem: 'Novo produto adicionado com sucesso!' }));
     _onClose();
   };
 

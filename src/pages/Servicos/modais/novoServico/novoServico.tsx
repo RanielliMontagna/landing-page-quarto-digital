@@ -1,6 +1,8 @@
-import { FC } from 'react';
 import { Modal } from 'components';
+import { FC } from 'react';
 import { MdAdd } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
+import { AppActions } from 'store';
 
 interface NovoServicoProps {
   novoServico: boolean;
@@ -8,12 +10,14 @@ interface NovoServicoProps {
 }
 
 const NovoServico: FC<NovoServicoProps> = ({ novoServico, setNovoServico }) => {
+  const dispatch = useDispatch();
+
   const _onClose = () => {
     setNovoServico(false);
   };
 
   const _handleSubmit = () => {
-    console.log('submit');
+    dispatch(AppActions.toggleNotificacao({ mensagem: 'Novo serviço adicionado com sucesso!' }));
     _onClose();
   };
 

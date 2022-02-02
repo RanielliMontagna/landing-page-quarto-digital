@@ -5,6 +5,7 @@ import type { AppSlice } from './appSlice.types';
 export const initialState: AppSlice = {
   loading: false,
   tema: localStorage.getItem('tema'),
+  notificacao: {},
 };
 
 const appSlice = createSlice({
@@ -17,6 +18,9 @@ const appSlice = createSlice({
     storeTema: (state, { payload }) => {
       localStorage.setItem('tema', payload);
       state.tema = payload;
+    },
+    toggleNotificacao: (state, { payload }) => {
+      state.notificacao = payload;
     },
   },
 });
