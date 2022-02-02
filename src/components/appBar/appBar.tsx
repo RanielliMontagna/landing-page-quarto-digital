@@ -48,8 +48,8 @@ const AppBar = () => {
             <MenuItem onClick={() => navigate('/configuracoes')}>
               {MenuItemConteudo('Configurações', <IoSettingsOutline size={16} />)}
             </MenuItem>
-            <MenuItem onClick={() => navigate('/')}>
-              {MenuItemConteudo('Meu usuário', <IoPersonOutline size={16} />)}
+            <MenuItem onClick={() => navigate('/minha-conta')}>
+              {MenuItemConteudo('Minha conta', <IoPersonOutline size={16} />)}
             </MenuItem>
             <MenuDivider />
             <MenuItem onClick={() => navigate('/login')}>
