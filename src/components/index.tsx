@@ -7,3 +7,4 @@ export { default as Private } from './layout/private/private';
 export { default as AppBar } from './appBar/appBar';
 export { default as Menu, MenuItemConteudo } from './menu/menu';
 export { default as Modal } from './modal/modal';
+export { default as PaginaBase } from './paginaBase/paginaBase';

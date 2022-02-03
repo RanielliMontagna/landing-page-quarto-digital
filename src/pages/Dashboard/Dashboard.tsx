@@ -1,10 +1,10 @@
-import { PageHeader } from 'components';
+import { PaginaBase } from 'components';
 
 export const Dashboard = () => {
   return (
-    <div>
-      <PageHeader titulo="Dashboard" />
-    </div>
+    <PaginaBase titulo="Dashboard">
+      <></>
+    </PaginaBase>
   );
 };
 

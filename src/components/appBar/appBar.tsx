@@ -1,7 +1,7 @@
 import { MenuDivider, MenuItem } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
-import { Menu, MenuItemConteudo } from 'components';
+import { Menu, MenuItemConteudo, DrawerMobile } from 'components';
 import { FiMoon, FiSun } from 'react-icons/fi';
 import { IoChevronDownOutline, IoExitOutline, IoPersonOutline, IoSettingsOutline } from 'react-icons/io5';
 import { useDispatch } from 'react-redux';
@@ -24,9 +24,14 @@ const AppBar = () => {
 
   return (
     <styled.DivAppBar tema={tema}>
-      <styled.DivTema onClick={_handleMudarTema}>
-        {tema === 'escuro' ? <FiMoon size={24} /> : <FiSun size={24} />}
-      </styled.DivTema>
+      <div style={{ display: 'flex', height: '100%' }}>
+        <styled.DivDrawer>
+          <DrawerMobile />
+        </styled.DivDrawer>
+        <styled.DivTema onClick={_handleMudarTema}>
+          {tema === 'escuro' ? <FiMoon size={24} /> : <FiSun size={24} />}
+        </styled.DivTema>
+      </div>
       <styled.DivPerfil>
         <Menu
           align="end"

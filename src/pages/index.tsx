@@ -5,3 +5,4 @@ export { default as Quartos } from './Quartos/quartos';
 export { default as Produtos } from './Produtos/produtos';
 export { default as Servicos } from './Servicos/servicos';
 export { default as MinhaConta } from './MinhaConta/MinhaConta';
+export { default as Indicadores } from './Indicadores/Indicadores';

@@ -2,18 +2,17 @@ import { MenuItem } from '@szhsin/react-menu';
 import { Menu, MenuItemConteudo, OpcoesMenu } from 'components';
 import { IoMenuSharp } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
-import { DivDrawerMobile } from './drawerMobile.styles';
 
 const DrawerMobile = () => {
   const navigate = useNavigate();
 
   return (
     <Menu
-      align="end"
+      align="start"
       menuButton={
-        <DivDrawerMobile>
-          <IoMenuSharp size={36} />
-        </DivDrawerMobile>
+        <div style={{ height: '100%', display: 'flex', alignItems: 'center' }}>
+          <IoMenuSharp size={24} />
+        </div>
       }
     >
       <>

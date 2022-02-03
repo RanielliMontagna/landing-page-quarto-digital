@@ -13,6 +13,25 @@ export const DivAppBar = styled.div<{ tema: string | null }>`
   align-items: center;
 `;
 
+export const DivDrawer = styled.div`
+  display: none !important;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 16px;
+  color: ${({ theme }) => theme.cores.secundaria};
+
+  &:hover {
+    transition: 0.5s;
+    background-color: ${({ theme }) => theme.cores.primaria}25;
+  }
+
+  @media (max-width: 576px) {
+    display: block !important;
+  }
+`;
+
 export const DivTema = styled.div`
   height: 100%;
   display: flex;
@@ -25,6 +44,10 @@ export const DivTema = styled.div`
   &:hover {
     transition: 0.5s;
     background-color: ${({ theme }) => theme.cores.primaria}25;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0px 16px;
   }
 `;
 
@@ -92,7 +115,7 @@ export const TituloPerfil = styled.p`
   overflow: hidden;
   max-width: 250px;
 
-  @media (max-width: 400px) {
+  @media (max-width: 576px) {
     display: none;
   }
 `;

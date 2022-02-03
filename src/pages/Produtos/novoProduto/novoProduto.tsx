@@ -25,7 +25,7 @@ const NovoProduto: FC<NovoProdutoProps> = ({ novoProduto, setNovoProduto }) => {
     <Modal
       open={novoProduto}
       onClose={_onClose}
-      titulo="Novo cliente"
+      titulo="Novo produto"
       footer={{
         botaoPrimario: {
           children: 'Adicionar',

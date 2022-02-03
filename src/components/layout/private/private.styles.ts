@@ -7,7 +7,7 @@ export const DivChildren = styled.div`
 `;
 
 export const DivDrawer = styled.div`
-  @media (max-width: 400px) {
+  @media (max-width: 576px) {
     display: none;
   }
 `;
@@ -15,7 +15,7 @@ export const DivDrawer = styled.div`
 export const DivDrawerMobile = styled.div`
   display: none;
 
-  @media (max-width: 400px) {
+  @media (max-width: 576px) {
     display: block;
   }
 `;
