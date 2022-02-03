@@ -19,16 +19,21 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
     background-color: ${({ theme }) => theme.cores.secundaria};
   }
 
-  /* &::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     width: 10px;
+
+    @media (max-width: 576px) {
+      width: 5px;
+    }
   }
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: ${({ theme }) => theme.cores.terciaria}; 
   }
   ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: ${({ theme }) => theme.coresExtras.cinzaEscuro}90;
+    border-radius: 100px; 
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  } */
+    background: ${({ theme }) => theme.coresExtras.cinzaEscuro}; 
+  }
 `;
