@@ -11,7 +11,7 @@ interface PaginaBaseProps {
 
 const PaginaBase: FC<PaginaBaseProps> = ({ titulo, children, button }) => {
   return (
-    <div style={{ height: '100%', overflow: 'auto' }}>
+    <div style={{ height: 'calc(100% - 60px)', overflow: 'auto' }}>
       <div>
         <PageHeader titulo={titulo} button={button} />
       </div>
