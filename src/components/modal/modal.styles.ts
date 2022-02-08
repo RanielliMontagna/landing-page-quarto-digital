@@ -70,8 +70,7 @@ export const Conteudo = styled.div`
 // Footer
 
 export const Footer = styled.div`
-  box-shadow: 0px -1px 1px 0px rgba(0, 0, 0, 0.1);
-  padding: 12px 23px 12px 24px;
+  padding: 12px 16px 16px 16px;
   display: flex;
   justify-content: space-between;
 `;
