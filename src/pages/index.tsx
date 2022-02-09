@@ -6,3 +6,4 @@ export { default as Produtos } from './Produtos/produtos';
 export { default as Servicos } from './Servicos/servicos';
 export { default as MinhaConta } from './MinhaConta/MinhaConta';
 export { default as Indicadores } from './Indicadores/Indicadores';
+export { default as LandingPage } from './LandingPage/LandingPage';

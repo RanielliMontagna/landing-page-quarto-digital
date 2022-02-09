@@ -33,7 +33,7 @@ export const DiasSemanais = [
 ];
 
 export const apexOptions = (theme: ThemeType) => {
-  const { primaria, secundaria, terciaria } = theme.cores;
+  const { secundaria } = theme.cores;
 
   let apexOptions: ApexOptions = {
     dataLabels: {
