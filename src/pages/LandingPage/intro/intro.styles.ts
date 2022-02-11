@@ -7,7 +7,6 @@ export const Intro = styled.div`
   align-items: center;
   flex-direction: column;
   color: ${({ theme }) => theme.coresExtras.branco};
-  font-family: 'Qanelas Soft';
   font-size: 4vw;
   background-image: url('/static/images/quarto.jpg');
   background-size: cover;

@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   * {
     margin: 0px;
     padding: 0px;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Qanelas Soft', sans-serif;
     user-select: none;
   }
 

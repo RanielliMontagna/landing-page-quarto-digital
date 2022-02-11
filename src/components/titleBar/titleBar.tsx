@@ -25,12 +25,12 @@ const TitleBar: FC<TitleBarProps> = ({ rota }) => {
             Contato {rota === 'contato' && <styled.Sublinhado />}
           </styled.Opcoes>
           <styled.Opcoes onClick={() => navigate('/login')}>
-            Login {rota === 'login' && <styled.Sublinhado />}
+            Entrar {rota === 'login' && <styled.Sublinhado />}
           </styled.Opcoes>
         </styled.DivOpcoes>
         <styled.DivOpcoes className="menuMobile">
           <Menu
-            offsetY={5}
+            align="end"
             menuButton={
               <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
                 <IoMenuSharp size={24} />

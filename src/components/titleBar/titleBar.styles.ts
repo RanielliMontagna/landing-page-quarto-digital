@@ -11,7 +11,6 @@ export const TitleBar = styled.div`
   height: 60px;
   color: ${({ theme }) => theme.coresExtras.branco};
   background-color: ${({ theme }) => theme.coresExtras.preto};
-  font-family: 'Qanelas Soft';
   font-size: 24px;
 
   .quarto {
@@ -59,6 +58,8 @@ export const Opcoes = styled.div`
   flex-direction: column;
   height: 100%;
   padding: 0px 24px;
+  transition: 0.3s;
+  border-radius: 0px 0px 8px 8px;
 
   &:hover {
     background-color: ${({ theme }) => theme.coresExtras.azul}80;
