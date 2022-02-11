@@ -1,4 +1,15 @@
-import { Clientes, Dashboard, Indicadores, Login, MinhaConta, Produtos, Quartos, Servicos, LandingPage } from 'pages';
+import {
+  Clientes,
+  Dashboard,
+  Indicadores,
+  Login,
+  MinhaConta,
+  Produtos,
+  Quartos,
+  Servicos,
+  LandingPage,
+  Contato,
+} from 'pages';
 import Configuracoes from 'pages/Configuracoes/Configuracoes';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Rota from './rota';
@@ -8,6 +19,7 @@ export const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Rota element={<LandingPage />} />} />
+        <Route path="/contato" element={<Rota element={<Contato />} />} />
         <Route path="/login" element={<Rota element={<Login />} />} />
         <Route path="/dashboard" element={<Rota element={<Dashboard />} isPrivate />} />
         <Route path="/indicadores" element={<Rota element={<Indicadores />} isPrivate />} />

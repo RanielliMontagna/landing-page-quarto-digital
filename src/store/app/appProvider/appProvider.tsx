@@ -20,8 +20,6 @@ const AppProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log(app.notificacao);
-
     if (app.notificacao.mensagem) {
       _dispararNotificacao(app.notificacao.mensagem ?? '', app.notificacao.variante);
     }

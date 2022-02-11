@@ -31,6 +31,8 @@ const Login = () => {
         <styled.ButtonEnter type="submit" onClick={() => navigate('/dashboard')}>
           Entrar
         </styled.ButtonEnter>
+        {/* Botao voltar home */}
+        <styled.VoltarHome onClick={() => navigate('/')}>Voltar para home</styled.VoltarHome>
       </styled.DivLogin>
 
       <styled.DivLayout>

@@ -7,10 +7,10 @@ interface MenuProps extends MenuPropsSzhsin {
   children: JSX.Element;
 }
 
-export const MenuItemConteudo = (titulo: string, icone: JSX.Element) => {
+export const MenuItemConteudo = (titulo: string, icone?: JSX.Element) => {
   return (
     <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
-      <styled.MenuItemIcone>{icone}</styled.MenuItemIcone>
+      {icone && <styled.MenuItemIcone>{icone}</styled.MenuItemIcone>}
       <div style={{ margin: '0px 8px' }}>
         <styled.MenuItemTitulo>{titulo}</styled.MenuItemTitulo>
       </div>

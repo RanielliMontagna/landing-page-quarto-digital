@@ -149,3 +149,16 @@ export const Divider = styled.div`
   margin: 0px 0px 16px 0px;
   border-radius: 10px;
 `;
+
+export const VoltarHome = styled.div`
+  padding-bottom: 16px;
+  cursor: pointer;
+  color: ${({ theme }) => theme.coresExtras.cinzaClaro};
+  &:hover {
+    transition: 0.5s;
+    color: ${({ theme }) => theme.coresExtras.cinzaEscuro};
+  }
+  @media (max-width: 576px) {
+    cursor: none;
+  }
+`;

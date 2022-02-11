@@ -9,3 +9,4 @@ export { default as Menu, MenuItemConteudo } from './menu/menu';
 export { default as Modal } from './modal/modal';
 export { default as PaginaBase } from './paginaBase/paginaBase';
 export { default as CardIndicador } from './cardIndicador/cardIndicador';
+export { default as TitleBar } from './titleBar/titleBar';
