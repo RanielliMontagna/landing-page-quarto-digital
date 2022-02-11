@@ -1,8 +1,6 @@
-import { DivFooter, Copyright, RedesSociais, RedeSocial } from './footer.styles';
+import { Copyright, DivFooter, RedeSocial, RedesSociais } from './footer.styles';
 
 const Footer = () => {
-  const logo = '/static/logo/quartoDigitalBranco.svg';
-
   return (
     <DivFooter id="footer">
       <div style={{ display: 'flex', alignItems: 'center', fontSize: '32px' }}>
