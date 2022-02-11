@@ -2,6 +2,7 @@ import { MenuItem } from '@szhsin/react-menu';
 import { Menu, MenuItemConteudo, OpcoesMenu } from 'components';
 import { IoMenuSharp } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
+import crypto from 'crypto';
 
 const DrawerMobile = () => {
   const navigate = useNavigate();
@@ -17,7 +18,9 @@ const DrawerMobile = () => {
     >
       <>
         {OpcoesMenu.map((value) => (
-          <MenuItem onClick={() => navigate(value.caminho)}>{MenuItemConteudo(value.titulo, value.icone)}</MenuItem>
+          <MenuItem key={crypto.randomBytes(8).toString('hex')} onClick={() => navigate(value.caminho)}>
+            {MenuItemConteudo(value.titulo, value.icone)}
+          </MenuItem>
         ))}
       </>
     </Menu>
