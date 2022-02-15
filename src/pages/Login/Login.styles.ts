@@ -142,14 +142,6 @@ export const DivIlustracao = styled.div`
   }
 `;
 
-export const Divider = styled.div`
-  background-color: ${({ theme }) => theme.coresExtras.branco};
-  width: 100px;
-  height: 5px;
-  margin: 0px 0px 16px 0px;
-  border-radius: 10px;
-`;
-
 export const VoltarHome = styled.div`
   padding-bottom: 16px;
   cursor: pointer;

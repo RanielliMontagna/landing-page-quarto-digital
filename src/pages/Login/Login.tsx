@@ -1,3 +1,4 @@
+import { Divider } from 'components';
 import { useNavigate } from 'react-router-dom';
 import * as styled from './Login.styles';
 
@@ -41,7 +42,7 @@ const Login = () => {
           <img src="./static/svgs/loginIllustration.svg" alt="loginIllustration"></img>
         </styled.DivIlustracao>
         <h1>Seja bem vindo!</h1>
-        <styled.Divider></styled.Divider>
+        <Divider styles={{ width: '100px', margin: '0px 0px 16px 0px' }}></Divider>
         <h2>
           Simplifique suas tarefas e tenha mais tempo para se <br />
           dedicar ao bem estar dos seus hóspedes.
