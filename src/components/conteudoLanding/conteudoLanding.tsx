@@ -6,16 +6,20 @@ interface ConteudoLandingProps {
   titulo: string;
   texto: string;
   posicaoImagem?: 'esquerda' | 'direita';
-  imagem?: React.ReactElement;
+  imagem?: string;
 }
 
 const ConteudoLanding: FC<ConteudoLandingProps> = ({ titulo, texto, imagem, posicaoImagem }) => {
   return (
     <styled.DivConteudo>
-      <styled.DivTitulo>
+      <styled.DivTexto>
         <h1>{titulo}</h1>
-        <Divider />
-      </styled.DivTitulo>
+        <Divider styles={{ margin: '0px 0px 16px 0px', width: '160px' }} />
+        <p style={{ textAlign: 'justify', fontSize: '1em' }}>{texto}</p>
+      </styled.DivTexto>
+      <styled.DivImagem>
+        <styled.Imagem src={imagem} alt={imagem} />
+      </styled.DivImagem>
     </styled.DivConteudo>
   );
 };
