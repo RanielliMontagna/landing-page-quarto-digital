@@ -13,6 +13,7 @@ const Footer = () => {
         </RedeSocial>
         <RedeSocial onClick={() => window.open('https://twitter.com/Ranii_Montagna/', '_blank')}>TWITTER</RedeSocial>
         <RedeSocial onClick={() => window.open('https://ranimontagna.com/', '_blank')}>SITE</RedeSocial>
+        <RedeSocial onClick={() => window.open('https://www.linkedin.com/in/rannimontagna/')}>LINKEDIN</RedeSocial>
         <RedeSocial onClick={() => window.open('mailto:contato@ranimontagna.com', '_blank')}>EMAIL</RedeSocial>
       </RedesSociais>
       <Copyright>
