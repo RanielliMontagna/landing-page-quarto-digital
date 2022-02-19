@@ -5,11 +5,10 @@ import * as styled from './conteudoLanding.styles';
 interface ConteudoLandingProps {
   titulo: string;
   texto: string;
-  posicaoImagem?: 'esquerda' | 'direita';
   imagem?: string;
 }
 
-const ConteudoLanding: FC<ConteudoLandingProps> = ({ titulo, texto, imagem, posicaoImagem }) => {
+const ConteudoLanding: FC<ConteudoLandingProps> = ({ titulo, texto, imagem }) => {
   return (
     <styled.DivConteudo>
       <styled.DivTexto>

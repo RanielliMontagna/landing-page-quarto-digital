@@ -1,3 +1,4 @@
+import { email, instagram, linkedin, site, twitter } from 'shared';
 import { Copyright, DivFooter, RedeSocial, RedesSociais } from './footer.styles';
 
 const Footer = () => {
@@ -8,13 +9,11 @@ const Footer = () => {
         <div className="digital">Digital</div>
       </div>
       <RedesSociais>
-        <RedeSocial onClick={() => window.open('https://www.instagram.com/raniellimontagna/', '_blank')}>
-          INSTAGRAM
-        </RedeSocial>
-        <RedeSocial onClick={() => window.open('https://twitter.com/Ranii_Montagna/', '_blank')}>TWITTER</RedeSocial>
-        <RedeSocial onClick={() => window.open('https://ranimontagna.com/', '_blank')}>SITE</RedeSocial>
-        <RedeSocial onClick={() => window.open('https://www.linkedin.com/in/rannimontagna/')}>LINKEDIN</RedeSocial>
-        <RedeSocial onClick={() => window.open('mailto:contato@ranimontagna.com', '_blank')}>EMAIL</RedeSocial>
+        <RedeSocial onClick={() => window.open(instagram, '_blank')}>INSTAGRAM</RedeSocial>
+        <RedeSocial onClick={() => window.open(twitter, '_blank')}>TWITTER</RedeSocial>
+        <RedeSocial onClick={() => window.open(site, '_blank')}>SITE</RedeSocial>
+        <RedeSocial onClick={() => window.open(linkedin)}>LINKEDIN</RedeSocial>
+        <RedeSocial onClick={() => window.open(email, '_blank')}>EMAIL</RedeSocial>
       </RedesSociais>
       <Copyright>
         Copyright 2022 – Ranielli Montagna.
