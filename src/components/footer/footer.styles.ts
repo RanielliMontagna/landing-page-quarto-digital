@@ -46,12 +46,13 @@ export const RedesSociais = styled.div`
   align-items: center;
   margin: 12px;
 
-  @media (max-width: 576px) {
+  @media (max-width: 700px) {
     flex-direction: column;
   }
 `;
 
 export const RedeSocial = styled.div`
+  font-size: 0.8em;
   font-weight: 800;
   margin: 4px 32px;
   transition: 0.2s;

@@ -11,3 +11,5 @@ export { default as PaginaBase } from './paginaBase/paginaBase';
 export { default as CardIndicador } from './cardIndicador/cardIndicador';
 export { default as TitleBar } from './titleBar/titleBar';
 export { default as Footer } from './footer/footer';
+export { default as ConteudoLanding } from './conteudoLanding/conteudoLanding';
+export { default as Divider } from './divider/divider';

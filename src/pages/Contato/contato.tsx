@@ -1,23 +1,27 @@
-import { Footer, TitleBar } from 'components';
-import { DivContato, Titulo } from './contato.styles';
+import { Divider, TitleBar } from 'components';
+import { DivConteudo, DivGeral } from './contato.styles';
+import Formulario from './formulario/formulario';
+import Informacoes from './informacoes/informacoes';
 
 const Contato = () => {
   return (
-    <DivContato>
-      <TitleBar rota="contato" />
-      <Titulo>
-        <h1> Entre em contato</h1>
-        <h2>
-          Um sistema de gestão hoteleira criado com carinho para simplificar a vida dos hotéis e pousadas de pequeno e
-          médio porte.
-        </h2>
-        {/* <h1>Tenha total controle sobre suas reservas.</h1>
-        <h1>Conheça o Quarto Digital e veja como funciona.</h1>
-        <h1>Fale conosco</h1>
-        <p></p> */}
-      </Titulo>
-      <Footer />
-    </DivContato>
+    <DivGeral>
+      <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+        <TitleBar rota="contato" />
+        <DivConteudo>
+          <h1>Entre em contato</h1>
+          <Divider styles={{ margin: '16px 0px', width: '200px' }} />
+          <p>
+            Conheça o <span>Quarto Digital</span>, entre em contato e nos conte suas dúvidas, críticas ou sugestões.
+            Preencha o formulário abaixo ou entre em contato através de um dos nossos contatos.
+          </p>
+        </DivConteudo>
+        <div style={{ display: 'flex', width: '1000px' }}>
+          <Informacoes />
+          <Formulario />
+        </div>
+      </div>
+    </DivGeral>
   );
 };
 
