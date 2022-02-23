@@ -1,16 +1,15 @@
-import { FC } from 'react';
+import { AppActions } from 'store';
+import { useDispatch } from 'react-redux';
+import { useProdutos } from 'store/produtos';
+
 import { Modal } from 'components';
 import { MdAdd } from 'react-icons/md';
-import { useDispatch } from 'react-redux';
-import { AppActions } from 'store';
 
-interface NovoProdutoProps {
-  novoProduto: boolean;
-  setNovoProduto: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const NovoProduto: FC<NovoProdutoProps> = ({ novoProduto, setNovoProduto }) => {
+const NovoProduto = () => {
   const dispatch = useDispatch();
+  const { novoProduto, setNovoProduto } = useProdutos();
+
+  if (!novoProduto) return null;
 
   const _onClose = () => {
     setNovoProduto(false);

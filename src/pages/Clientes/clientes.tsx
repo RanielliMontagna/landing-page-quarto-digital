@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import React from 'react';
 import { PaginaBase } from 'components';
 import { IoAdd } from 'react-icons/io5';
 import NovoCliente from './modais/novoCliente/novoCliente';
+import { ClientesProvider, useClientes } from 'store/clientes';
 
-export const Clientes = () => {
-  const [novoCliente, setNovoCliente] = useState(false);
+const Clientes = () => {
+  const { setNovoCliente } = useClientes();
 
   return (
     <PaginaBase
@@ -16,9 +17,17 @@ export const Clientes = () => {
         onClick: () => setNovoCliente(true),
       }}
     >
-      <>{novoCliente && <NovoCliente novoCliente={novoCliente} setNovoCliente={setNovoCliente} />}</>
+      <NovoCliente />
     </PaginaBase>
   );
 };
 
-export default Clientes;
+const ClientesWrapper: React.FC = () => {
+  return (
+    <ClientesProvider>
+      <Clientes />
+    </ClientesProvider>
+  );
+};
+
+export default ClientesWrapper;

@@ -1,16 +1,14 @@
-import { Modal } from 'components';
-import { FC } from 'react';
-import { MdAdd } from 'react-icons/md';
-import { useDispatch } from 'react-redux';
 import { AppActions } from 'store';
+import { useDispatch } from 'react-redux';
+import { Modal } from 'components';
+import { MdAdd } from 'react-icons/md';
+import { useServicos } from 'store/servicos';
 
-interface NovoServicoProps {
-  novoServico: boolean;
-  setNovoServico: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const NovoServico: FC<NovoServicoProps> = ({ novoServico, setNovoServico }) => {
+const NovoServico = () => {
   const dispatch = useDispatch();
+  const { novoServico, setNovoServico } = useServicos();
+
+  if (!novoServico) return null;
 
   const _onClose = () => {
     setNovoServico(false);

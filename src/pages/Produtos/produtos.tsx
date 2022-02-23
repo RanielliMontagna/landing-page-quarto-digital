@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import React from 'react';
 import { PaginaBase } from 'components';
 import { IoAdd } from 'react-icons/io5';
 import NovoProduto from './novoProduto/novoProduto';
+import { ProdutosProvider, useProdutos } from 'store/produtos';
 
-export const Produtos = () => {
-  const [novoProduto, setNovoProduto] = useState(false);
+const Produtos = () => {
+  const { setNovoProduto } = useProdutos();
 
   return (
     <PaginaBase
@@ -16,9 +17,17 @@ export const Produtos = () => {
         onClick: () => setNovoProduto(true),
       }}
     >
-      <> {novoProduto && <NovoProduto novoProduto={novoProduto} setNovoProduto={setNovoProduto} />}</>
+      <NovoProduto />
     </PaginaBase>
   );
 };
 
-export default Produtos;
+const ProdutosWrapper: React.FC = () => {
+  return (
+    <ProdutosProvider>
+      <Produtos />
+    </ProdutosProvider>
+  );
+};
+
+export default ProdutosWrapper;

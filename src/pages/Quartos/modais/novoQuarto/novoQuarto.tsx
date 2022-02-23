@@ -1,16 +1,15 @@
-import { FC } from 'react';
+import { AppActions } from 'store';
+import { useDispatch } from 'react-redux';
+import { useQuartos } from 'store/quartos';
+
 import { Modal } from 'components';
 import { MdAdd } from 'react-icons/md';
-import { useDispatch } from 'react-redux';
-import { AppActions } from 'store';
 
-interface NovoQuartoProps {
-  novoQuarto: boolean;
-  setNovoQuarto: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const NovoQuarto: FC<NovoQuartoProps> = ({ novoQuarto, setNovoQuarto }) => {
+const NovoQuarto = () => {
   const dispatch = useDispatch();
+  const { novoQuarto, setNovoQuarto } = useQuartos();
+
+  if (!novoQuarto) return null;
 
   const _onClose = () => {
     setNovoQuarto(false);

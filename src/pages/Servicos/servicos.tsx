@@ -1,10 +1,10 @@
 import { PaginaBase } from 'components';
-import { useState } from 'react';
 import { IoAdd } from 'react-icons/io5';
+import { ServicosProvider, useServicos } from 'store/servicos';
 import NovoServico from './modais/novoServico/novoServico';
 
 export const Servicos = () => {
-  const [novoServico, setNovoServico] = useState(false);
+  const { setNovoServico } = useServicos();
 
   return (
     <PaginaBase
@@ -16,9 +16,17 @@ export const Servicos = () => {
         onClick: () => setNovoServico(true),
       }}
     >
-      <> {novoServico && <NovoServico novoServico={novoServico} setNovoServico={setNovoServico} />}</>
+      <NovoServico />
     </PaginaBase>
   );
 };
 
-export default Servicos;
+const ServicosWrapper: React.FC = () => {
+  return (
+    <ServicosProvider>
+      <Servicos />
+    </ServicosProvider>
+  );
+};
+
+export default ServicosWrapper;

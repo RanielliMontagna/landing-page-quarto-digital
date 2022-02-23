@@ -1,10 +1,10 @@
 import { PaginaBase } from 'components';
-import { useState } from 'react';
 import { IoAdd } from 'react-icons/io5';
+import { QuartosProvider, useQuartos } from 'store/quartos';
 import NovoQuarto from './modais/novoQuarto/novoQuarto';
 
 export const Quartos = () => {
-  const [novoQuarto, setNovoQuarto] = useState(false);
+  const { setNovoQuarto } = useQuartos();
 
   return (
     <PaginaBase
@@ -16,9 +16,17 @@ export const Quartos = () => {
         onClick: () => setNovoQuarto(true),
       }}
     >
-      <> {novoQuarto && <NovoQuarto novoQuarto={novoQuarto} setNovoQuarto={setNovoQuarto} />}</>
+      <NovoQuarto />
     </PaginaBase>
   );
 };
 
-export default Quartos;
+const QuartosWrapper: React.FC = () => {
+  return (
+    <QuartosProvider>
+      <Quartos />
+    </QuartosProvider>
+  );
+};
+
+export default QuartosWrapper;

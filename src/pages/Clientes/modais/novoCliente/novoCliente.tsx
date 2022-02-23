@@ -1,16 +1,15 @@
-import { FC } from 'react';
+import { AppActions } from 'store';
+import { useDispatch } from 'react-redux';
+import { useClientes } from 'store/clientes';
+
 import { Modal } from 'components';
 import { MdAdd } from 'react-icons/md';
-import { useDispatch } from 'react-redux';
-import { AppActions } from 'store';
 
-interface NovoClienteProps {
-  novoCliente: boolean;
-  setNovoCliente: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const NovoCliente: FC<NovoClienteProps> = ({ novoCliente, setNovoCliente }) => {
+const NovoCliente = () => {
   const dispatch = useDispatch();
+  const { novoCliente, setNovoCliente } = useClientes();
+
+  if (!novoCliente) return null;
 
   const _onClose = () => {
     setNovoCliente(false);
