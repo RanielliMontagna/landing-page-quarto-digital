@@ -1,11 +1,11 @@
 import { CardIndicador, PaginaBase } from 'components';
+import { useTheme } from 'hooks';
 import ReactApexChart from 'react-apexcharts';
-import { useTheme } from 'styled-components';
 import { apexOptions, DadosCards } from './indicadores.static';
 import * as styled from './indicadores.styles';
 
 export const Indicadores = () => {
-  const theme: any = useTheme();
+  const theme = useTheme();
 
   return (
     <PaginaBase titulo="Indicadores">
