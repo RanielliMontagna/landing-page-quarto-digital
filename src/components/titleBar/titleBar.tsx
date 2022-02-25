@@ -1,6 +1,6 @@
+import { FC, memo } from 'react';
 import { MenuItem } from '@szhsin/react-menu';
 import { Menu, MenuItemConteudo } from 'components';
-import { FC } from 'react';
 import { IoMenuSharp } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import * as styled from './titleBar.styles';
@@ -51,4 +51,4 @@ const TitleBar: FC<TitleBarProps> = ({ rota }) => {
   );
 };
 
-export default TitleBar;
+export default memo(TitleBar);

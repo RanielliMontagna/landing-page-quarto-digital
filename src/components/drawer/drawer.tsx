@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import * as styled from './drawer.styles';
 import Botoes from './botoes/botoes';
 
@@ -17,4 +17,4 @@ const Drawer: FC<DrawerProps> = () => {
   );
 };
 
-export default Drawer;
+export default memo(Drawer);

@@ -1,5 +1,5 @@
+import { FC, memo } from 'react';
 import { Button } from 'components';
-import { FC } from 'react';
 import { MdClose } from 'react-icons/md';
 import { useApp } from 'store';
 import * as styled from './modal.styles';
@@ -46,4 +46,4 @@ const Modal: FC<ModalProps> = ({ titulo, size, onClose, children, open, footer }
   );
 };
 
-export default Modal;
+export default memo(Modal);

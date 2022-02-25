@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { MenuDivider, MenuItem } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
@@ -67,4 +68,4 @@ const AppBar = () => {
   );
 };
 
-export default AppBar;
+export default memo(AppBar);

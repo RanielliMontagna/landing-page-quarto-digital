@@ -1,5 +1,5 @@
+import { FC, memo } from 'react';
 import { Divider } from 'components';
-import { FC } from 'react';
 import * as styled from './conteudoLanding.styles';
 
 interface ConteudoLandingProps {
@@ -23,4 +23,4 @@ const ConteudoLanding: FC<ConteudoLandingProps> = ({ titulo, texto, imagem }) =>
   );
 };
 
-export default ConteudoLanding;
+export default memo(ConteudoLanding);

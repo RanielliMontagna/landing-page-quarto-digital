@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { email, instagram, linkedin, site, twitter } from 'shared';
 import { Copyright, DivFooter, RedeSocial, RedesSociais } from './footer.styles';
 
@@ -23,4 +24,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

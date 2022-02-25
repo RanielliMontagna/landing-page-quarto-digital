@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { useApp } from 'store';
 import * as styled from './menu.styles';
 import { MenuProps as MenuPropsSzhsin } from '@szhsin/react-menu';
@@ -28,4 +28,4 @@ const Menu: FC<MenuProps> = ({ menuButton, align, offsetY, offsetX, children }) 
   );
 };
 
-export default Menu;
+export default memo(Menu);

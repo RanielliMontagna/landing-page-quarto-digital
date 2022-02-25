@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { ConfiguracoesProvider } from 'store';
 import { AppBar, Drawer } from 'components';
 import * as styled from './private.styles';
@@ -23,4 +23,4 @@ const Private: FC<PrivateProps> = ({ children }) => {
   );
 };
 
-export default Private;
+export default memo(Private);

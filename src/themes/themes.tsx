@@ -1,12 +1,13 @@
 import { useApp } from 'store';
 import { ThemeProvider } from 'styled-components';
 
-const tamanhoFonte: any = ['12px', '14px', '16px', '20px', '24px'];
-tamanhoFonte.xs = tamanhoFonte[0];
-tamanhoFonte.sm = tamanhoFonte[1];
-tamanhoFonte.md = tamanhoFonte[2];
-tamanhoFonte.lg = tamanhoFonte[3];
-tamanhoFonte.xl = tamanhoFonte[4];
+const tamanhoFonte = {
+  xs: '12px',
+  sm: '14px',
+  md: '16px',
+  lg: '20px',
+  xl: '32px',
+};
 
 export const azulQD = '#384B78';
 const pretoQD = '#22252C';

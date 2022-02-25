@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { MenuItem } from '@szhsin/react-menu';
 import { Menu, MenuItemConteudo, OpcoesMenu } from 'components';
 import { IoMenuSharp } from 'react-icons/io5';
@@ -27,4 +28,4 @@ const DrawerMobile = () => {
   );
 };
 
-export default DrawerMobile;
+export default memo(DrawerMobile);

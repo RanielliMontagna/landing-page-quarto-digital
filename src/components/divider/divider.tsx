@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { DividerComponent } from './divider.styles';
 
 interface DividerProps {
@@ -9,4 +9,4 @@ const Divider: FC<DividerProps> = ({ styles }) => {
   return <DividerComponent style={styles}></DividerComponent>;
 };
 
-export default Divider;
+export default memo(Divider);

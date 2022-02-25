@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import * as styled from './cardIndicador.styles';
 
 interface CardIndicadorProps {
@@ -11,4 +11,4 @@ const CardIndicador: FC<CardIndicadorProps> = ({ titulo, valor }) => {
   return <styled.CardIndicador></styled.CardIndicador>;
 };
 
-export default CardIndicador;
+export default memo(CardIndicador);

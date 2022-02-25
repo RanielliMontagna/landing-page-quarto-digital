@@ -1,5 +1,5 @@
-import { Button } from 'components';
-import { FC } from 'react';
+import { FC, memo } from 'react';
+import { Button, Typography } from 'components';
 import * as styled from './pageHeader.styles';
 import { ButtonProps } from 'components/button/button.types';
 import { MdAdd } from 'react-icons/md';
@@ -13,7 +13,9 @@ const PageHeader: FC<PageHeaderProps> = ({ titulo, button }) => {
   return (
     <styled.DivPageHeader>
       <div className="divTitulo">
-        <h1>{titulo}</h1>
+        <Typography weight="bold" size="xl">
+          {titulo}
+        </Typography>
       </div>
       {button && (
         <>
@@ -31,4 +33,4 @@ const PageHeader: FC<PageHeaderProps> = ({ titulo, button }) => {
   );
 };
 
-export default PageHeader;
+export default memo(PageHeader);

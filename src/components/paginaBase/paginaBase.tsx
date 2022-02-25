@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { PageHeader } from 'components';
 import * as styled from './paginaBase.styles';
 import { ButtonProps } from 'components/button/button.types';
@@ -20,4 +20,4 @@ const PaginaBase: FC<PaginaBaseProps> = ({ titulo, children, button }) => {
   );
 };
 
-export default PaginaBase;
+export default memo(PaginaBase);
