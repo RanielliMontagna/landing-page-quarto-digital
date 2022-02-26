@@ -41,7 +41,7 @@ export const ModalHeader = styled.div`
 
 export const TituloModal = styled.div`
   padding-left: 4px;
-  font-size: ${({ theme }) => theme.tamanhoFonte.xl};
+  font-size: ${({ theme }) => theme.tamanhoFonte.lg};
   font-weight: 600;
   overflow: hidden;
   white-space: nowrap;

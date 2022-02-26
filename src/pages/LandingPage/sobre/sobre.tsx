@@ -6,7 +6,15 @@ const Sobre = () => {
     <styled.Sobre id="sobre">
       <ConteudoLanding
         titulo="Sobre nós"
-        texto="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        texto={
+          <>
+            Tudo que fazemos é focado em como podemos ajudar clientes a atingir melhores resultados. A zona de conforto
+            não é lugar onde as grandes conquistas acontecem. <br />
+            Por isso, estudamos, aprendemos e aplicamos novos conhecimentos todos os dias. O sistema do Quarto Digital
+            está em todas as etapas da experiência do hóspede. Pensamos em cada detalhe, para que o hoteleiro possa
+            entrar a melhor estadia ao seu hóspede.
+          </>
+        }
         imagem="static/svgs/cama.svg"
       />
     </styled.Sobre>

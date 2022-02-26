@@ -16,6 +16,8 @@ export const DivTexto = styled.div`
 
   p {
     font-weight: 200;
+    text-align: justify;
+    font-size: 1.2em;
   }
 
   @media (max-width: 1000px) {
@@ -40,6 +42,6 @@ export const Imagem = styled.img`
 
   @media (max-width: 1000px) {
     margin-top: 64px;
-    width: 200px;
+    width: 50vw;
   }
 `;

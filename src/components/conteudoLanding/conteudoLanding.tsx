@@ -4,7 +4,7 @@ import * as styled from './conteudoLanding.styles';
 
 interface ConteudoLandingProps {
   titulo: string;
-  texto: string;
+  texto: React.ReactNode;
   imagem?: string;
 }
 
@@ -14,7 +14,7 @@ const ConteudoLanding: FC<ConteudoLandingProps> = ({ titulo, texto, imagem }) =>
       <styled.DivTexto>
         <h1>{titulo}</h1>
         <Divider styles={{ margin: '0px 0px 16px 0px', width: '160px' }} />
-        <p style={{ textAlign: 'justify', fontSize: '1em' }}>{texto}</p>
+        <p>{texto}</p>
       </styled.DivTexto>
       <styled.DivImagem>
         <styled.Imagem src={imagem} alt={imagem} />

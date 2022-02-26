@@ -1,58 +1,48 @@
 import { useApp } from 'store';
 import { ThemeProvider } from 'styled-components';
+import { azulQD, brancoQD, cinzaClaro, cinzaEscuro, danger, pretoAzulado, pretoQD, success, warning } from './cores';
+import { tamanhoFonte } from './fontes';
 
-const tamanhoFonte = {
-  xs: '12px',
-  sm: '14px',
-  md: '16px',
-  lg: '20px',
-  xl: '32px',
+const _coresExtras = {
+  cinzaClaro: cinzaClaro,
+  cinzaEscuro: cinzaEscuro,
+  pretoAppBar: pretoAzulado,
+  branco: brancoQD,
+  preto: pretoQD,
+  azul: azulQD,
 };
 
-export const azulQD = '#384B78';
-const pretoQD = '#22252C';
-const brancoQD = '#f1f1f1';
-const cinzaEscuroQD = '#575757';
-const cinzaClaroQD = '#8b8b8b';
-const pretoAppBar = '#2b2f38';
+const _coresUtilitarias = {
+  success: success,
+  warning: warning,
+  danger: danger,
+};
 
-export type ThemeType = typeof temaClaro;
-
-export const temaClaro = {
+export const _temaClaro = {
   tamanhoFonte,
   cores: {
     primaria: azulQD,
     secundaria: pretoQD,
     terciaria: brancoQD,
   },
-  coresExtras: {
-    cinzaClaro: cinzaClaroQD,
-    cinzaEscuro: cinzaEscuroQD,
-    pretoAppBar: pretoAppBar,
-    branco: brancoQD,
-    preto: pretoQD,
-    azul: azulQD,
-  },
+  coresUtilitarias: _coresUtilitarias,
+  coresExtras: _coresExtras,
 };
 
-export const temaEscuro = {
+export const _temaEscuro = {
   tamanhoFonte,
   cores: {
     primaria: azulQD,
     secundaria: brancoQD,
     terciaria: pretoQD,
   },
-  coresExtras: {
-    cinzaClaro: cinzaClaroQD,
-    cinzaEscuro: cinzaEscuroQD,
-    pretoAppBar: pretoAppBar,
-    branco: brancoQD,
-    preto: pretoQD,
-    azul: azulQD,
-  },
+  coresUtilitarias: _coresUtilitarias,
+  coresExtras: _coresExtras,
 };
+
+export type ThemeType = typeof _temaClaro;
 
 export const Theme: React.FC = ({ children }) => {
   const { tema } = useApp();
-  return <ThemeProvider theme={tema === 'escuro' ? temaEscuro : temaClaro}>{children}</ThemeProvider>;
+  return <ThemeProvider theme={tema === 'escuro' ? _temaEscuro : _temaClaro}>{children}</ThemeProvider>;
 };

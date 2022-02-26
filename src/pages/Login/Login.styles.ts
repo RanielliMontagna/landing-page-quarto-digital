@@ -84,7 +84,7 @@ export const ButtonEnter = styled.button`
   border: none;
   border-radius: 4px;
   color: ${({ theme }) => theme.coresExtras.branco};
-  font-size: ${(props) => `${props.theme.tamanhoFonte.lg}`};
+  font-size: ${(props) => `${props.theme.tamanhoFonte.md}`};
   font-weight: 500;
   cursor: pointer;
   transition: 0.5s;
