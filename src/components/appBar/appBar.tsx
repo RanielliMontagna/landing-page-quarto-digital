@@ -2,13 +2,15 @@ import { memo } from 'react';
 import { MenuDivider, MenuItem } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
-import { Menu, MenuItemConteudo, DrawerMobile } from 'components';
+import { Menu, MenuItemConteudo, DrawerMobile, Typography } from 'components';
 import { FiMoon, FiSun } from 'react-icons/fi';
-import { IoChevronDownOutline, IoExitOutline, IoPersonOutline, IoSettingsOutline } from 'react-icons/io5';
+import { IoChevronDownOutline } from 'react-icons/io5';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { AppActions, useApp } from 'store';
 import * as styled from './appBar.styles';
+import { Tooltip } from '@mui/material';
+import { ItemsMenu } from './appBar.static';
 
 const AppBar = () => {
   const navigate = useNavigate();
@@ -29,9 +31,11 @@ const AppBar = () => {
         <styled.DivDrawer>
           <DrawerMobile />
         </styled.DivDrawer>
-        <styled.DivTema onClick={_handleMudarTema}>
-          {tema === 'escuro' ? <FiMoon size={24} /> : <FiSun size={24} />}
-        </styled.DivTema>
+        <Tooltip title={<Typography>Tema do sistema</Typography>} placement="bottom" arrow>
+          <styled.DivTema onClick={_handleMudarTema}>
+            {tema === 'escuro' ? <FiMoon size={24} /> : <FiSun size={24} />}
+          </styled.DivTema>
+        </Tooltip>
       </div>
       <styled.DivPerfil>
         <Menu
@@ -51,16 +55,14 @@ const AppBar = () => {
           }
         >
           <>
-            <MenuItem onClick={() => navigate('/configuracoes')}>
-              {MenuItemConteudo('Configurações', <IoSettingsOutline size={16} />)}
-            </MenuItem>
-            <MenuItem onClick={() => navigate('/minha-conta')}>
-              {MenuItemConteudo('Minha conta', <IoPersonOutline size={16} />)}
-            </MenuItem>
-            <MenuDivider />
-            <MenuItem onClick={() => navigate('/login')}>
-              {MenuItemConteudo('Sair', <IoExitOutline size={16} />)}
-            </MenuItem>
+            {ItemsMenu.map(({ icon, label, route, divider }) => {
+              return (
+                <>
+                  {divider && <MenuDivider />}
+                  <MenuItem onClick={() => navigate(route)}>{MenuItemConteudo(label, icon)}</MenuItem>
+                </>
+              );
+            })}
           </>
         </Menu>
       </styled.DivPerfil>

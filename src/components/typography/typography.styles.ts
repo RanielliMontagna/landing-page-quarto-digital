@@ -1,6 +1,51 @@
 import styled, { css } from 'styled-components';
 import { TypographyProps } from './typography.types';
 
+const getColor = ({ color }: Pick<TypographyProps, 'color'>) => {
+  switch (color) {
+    case 'primary':
+      return css`
+        color: ${({ theme }) => theme.cores.primaria};
+      `;
+    case 'secondary':
+      return css`
+        color: ${({ theme }) => theme.cores.secundaria};
+      `;
+    case 'terciary':
+      return css`
+        color: ${({ theme }) => theme.cores.terciaria};
+      `;
+    case 'success':
+      return css`
+        color: ${({ theme }) => theme.coresUtilitarias.success};
+      `;
+    case 'warning':
+      return css`
+        color: ${({ theme }) => theme.coresUtilitarias.warning};
+      `;
+    case 'danger':
+      return css`
+        color: ${({ theme }) => theme.coresUtilitarias.danger};
+      `;
+    case 'darkGray':
+      return css`
+        color: ${({ theme }) => theme.coresExtras.cinzaClaro};
+      `;
+    case 'lightGray':
+      return css`
+        color: ${({ theme }) => theme.coresExtras.cinzaEscuro};
+      `;
+    case 'darkBlue':
+      return css`
+        color: ${({ theme }) => theme.coresExtras.pretoAzulado};
+      `;
+    default:
+      return css`
+        color: color;
+      `;
+  }
+};
+
 const getSize = ({ size }: Pick<TypographyProps, 'size'>) => {
   switch (size) {
     case 'xs':
@@ -50,4 +95,5 @@ const getWeight = ({ weight }: Pick<TypographyProps, 'weight'>) => {
 export const Typography = styled.span<TypographyProps>`
   ${({ weight }) => getWeight({ weight })};
   ${({ size }) => getSize({ size })};
+  ${({ color }) => getColor({ color })};
 `;
