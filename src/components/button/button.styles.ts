@@ -1,7 +1,7 @@
-import { Size } from 'shared';
+import { Colors, getColor, getContrastColor, Size } from 'shared';
 import styled from 'styled-components';
 
-export const Button = styled.button<{ size: Size; fullWidth: boolean }>`
+export const Button = styled.button<{ size: Size; fullWidth: boolean; color?: Colors }>`
   padding: 0px 16px 0 10px;
   cursor: pointer;
   border-radius: 4px;
@@ -14,9 +14,9 @@ export const Button = styled.button<{ size: Size; fullWidth: boolean }>`
   width: ${(props) => props.fullWidth && '100%'};
   height: ${(props) => (props.size === 'sm' ? '24px' : props.size === 'md' ? '36px' : '44px')};
 
-  &.neutral {
-    background-color: ${({ theme }) => theme.cores.secundaria};
-    color: ${({ theme }) => theme.cores.terciaria};
+  &.normal {
+    background-color: ${({ color }) => getColor({ color })};
+    color: ${({ color }) => getContrastColor({ color })};
 
     &:hover {
       filter: brightness(0.8);
@@ -25,13 +25,15 @@ export const Button = styled.button<{ size: Size; fullWidth: boolean }>`
   }
 
   &.outlined {
-    border: 1px solid ${({ theme }) => theme.cores.secundaria};
+    padding: 0px 15px 0 9px;
+    height: ${(props) => (props.size === 'sm' ? '22px' : props.size === 'md' ? '34px' : '42px')};
+    border: 1px solid ${({ color }) => getColor({ color })};
     background-color: transparent;
-    color: ${({ theme }) => theme.cores.secundaria};
+    color: ${({ color }) => getColor({ color })};
 
     &:hover {
-      background-color: ${({ theme }) => theme.cores.secundaria};
-      color: ${({ theme }) => theme.cores.terciaria};
+      background-color: ${({ color, theme }) => (color ? getColor({ color }) : theme.coresExtras.preto)};
+      color: ${({ color }) => getContrastColor({ color })};
       transition: 0.5s;
     }
   }

@@ -9,5 +9,5 @@ export type Colors = MainColors | UtilitaryColors | NeutralColors | `#${string}`
 export type Size = 'sm' | 'md' | 'lg';
 export type FontSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
-export type Variants = 'neutral' | 'outlined';
+export type Variants = 'normal' | 'outlined';
 export type FontWeight = 'slim' | 'normal' | 'bold';

@@ -1,7 +1,7 @@
-import { ButtonColors, Size, Variants } from 'shared';
+import { Colors, Size, Variants } from 'shared';
 
 export interface ButtonProps {
-  color?: ButtonColors;
+  color?: Colors;
   size?: Size;
   fullWidth?: true;
   variant?: Variants;

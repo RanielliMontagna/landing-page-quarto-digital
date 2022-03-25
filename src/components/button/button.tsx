@@ -6,9 +6,10 @@ import { ButtonProps } from './button.types';
 const Button: FC<ButtonProps> = ({ children, color, size, fullWidth, variant, startIcon, onClick }) => {
   return (
     <styled.Button
+      color={color ?? 'secondary'}
       fullWidth={fullWidth ?? false}
       size={size ?? 'md'}
-      className={variant ?? 'neutral'}
+      className={variant ?? 'normal'}
       onClick={onClick}
     >
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'start', marginRight: '6px' }}>

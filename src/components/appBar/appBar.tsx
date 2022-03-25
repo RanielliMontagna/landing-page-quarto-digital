@@ -31,7 +31,7 @@ const AppBar = () => {
         <styled.DivDrawer>
           <DrawerMobile />
         </styled.DivDrawer>
-        <Tooltip title={<Typography>Tema do sistema</Typography>} placement="bottom" arrow>
+        <Tooltip title={<Typography>Tema atual do sistema</Typography>} placement="bottom" arrow>
           <styled.DivTema onClick={_handleMudarTema}>
             {tema === 'escuro' ? <FiMoon size={24} /> : <FiSun size={24} />}
           </styled.DivTema>
