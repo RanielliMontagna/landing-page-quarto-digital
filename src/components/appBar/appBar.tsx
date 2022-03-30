@@ -15,14 +15,14 @@ import crypto from 'crypto';
 
 const AppBar = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const _dispatch = useDispatch();
   const { tema } = useApp();
 
   const _handleMudarTema = () => {
     if (tema === 'escuro') {
-      dispatch(AppActions.storeTema('claro'));
+      _dispatch(AppActions.storeTema('claro'));
     } else {
-      dispatch(AppActions.storeTema('escuro'));
+      _dispatch(AppActions.storeTema('escuro'));
     }
   };
 

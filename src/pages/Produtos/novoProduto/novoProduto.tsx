@@ -6,7 +6,7 @@ import { Modal } from 'components';
 import { MdAdd } from 'react-icons/md';
 
 const NovoProduto = () => {
-  const dispatch = useDispatch();
+  const _dispatch = useDispatch();
   const { novoProduto, setNovoProduto } = useProdutos();
 
   if (!novoProduto) return null;
@@ -16,7 +16,7 @@ const NovoProduto = () => {
   };
 
   const _handleSubmit = () => {
-    dispatch(AppActions.toggleNotificacao({ mensagem: 'Novo produto adicionado com sucesso!' }));
+    _dispatch(AppActions.toggleNotificacao({ mensagem: 'Novo produto adicionado com sucesso!' }));
     _onClose();
   };
 

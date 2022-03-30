@@ -1,6 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import type { AppSlice } from './appSlice.types';
+import type { AppSlice, LoadingType, Notificacao } from './appSlice.types';
 
 export const initialState: AppSlice = {
   loading: false,
@@ -19,7 +19,10 @@ const appSlice = createSlice({
       localStorage.setItem('tema', payload);
       state.tema = payload;
     },
-    toggleNotificacao: (state, { payload }) => {
+    toggleLoading: (state, { payload }: PayloadAction<LoadingType>) => {
+      state.loading = payload;
+    },
+    toggleNotificacao: (state, { payload }: PayloadAction<Notificacao>) => {
       state.notificacao = payload;
     },
   },

@@ -6,7 +6,7 @@ import { Modal } from 'components';
 import { MdAdd } from 'react-icons/md';
 
 const NovoCliente = () => {
-  const dispatch = useDispatch();
+  const _dispatch = useDispatch();
   const { novoCliente, setNovoCliente } = useClientes();
 
   if (!novoCliente) return null;
@@ -16,7 +16,7 @@ const NovoCliente = () => {
   };
 
   const _handleSubmit = () => {
-    dispatch(AppActions.toggleNotificacao({ mensagem: 'Novo cliente adicionado com sucesso!' }));
+    _dispatch(AppActions.toggleNotificacao({ mensagem: 'Novo cliente adicionado com sucesso!' }));
     _onClose();
   };
 

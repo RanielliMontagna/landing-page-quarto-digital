@@ -5,7 +5,7 @@ import { MdAdd } from 'react-icons/md';
 import { useServicos } from 'store/servicos';
 
 const NovoServico = () => {
-  const dispatch = useDispatch();
+  const _dispatch = useDispatch();
   const { novoServico, setNovoServico } = useServicos();
 
   if (!novoServico) return null;
@@ -15,7 +15,7 @@ const NovoServico = () => {
   };
 
   const _handleSubmit = () => {
-    dispatch(AppActions.toggleNotificacao({ mensagem: 'Novo serviço adicionado com sucesso!' }));
+    _dispatch(AppActions.toggleNotificacao({ mensagem: 'Novo serviço adicionado com sucesso!' }));
     _onClose();
   };
 

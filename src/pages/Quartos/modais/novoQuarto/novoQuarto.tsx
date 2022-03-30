@@ -6,7 +6,7 @@ import { Modal } from 'components';
 import { MdAdd } from 'react-icons/md';
 
 const NovoQuarto = () => {
-  const dispatch = useDispatch();
+  const _dispatch = useDispatch();
   const { novoQuarto, setNovoQuarto } = useQuartos();
 
   if (!novoQuarto) return null;
@@ -16,7 +16,7 @@ const NovoQuarto = () => {
   };
 
   const _handleSubmit = () => {
-    dispatch(AppActions.toggleNotificacao({ mensagem: 'Novo quarto adicionado com sucesso!' }));
+    _dispatch(AppActions.toggleNotificacao({ mensagem: 'Novo quarto adicionado com sucesso!' }));
     _onClose();
   };
 

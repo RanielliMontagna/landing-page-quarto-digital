@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { AppActions } from 'store';
 
 const AppProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
-  const dispatch = useDispatch();
+  const _dispatch = useDispatch();
   const app = useSelector(({ App }) => App);
   const { enqueueSnackbar } = useSnackbar();
 
@@ -16,7 +16,7 @@ const AppProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
       anchorOrigin: { horizontal: 'right', vertical: 'bottom' },
       autoHideDuration: 3000,
     });
-    dispatch(AppActions.toggleNotificacao({}));
+    _dispatch(AppActions.toggleNotificacao({}));
   };
 
   useEffect(() => {
