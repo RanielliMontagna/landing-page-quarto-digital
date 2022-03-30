@@ -1,8 +1,12 @@
+import { Fragment } from 'react';
+import ReactApexChart from 'react-apexcharts';
+import crypto from 'crypto';
+
+import * as styled from './indicadores.styles';
+import { apexOptions, DadosCards } from './indicadores.static';
+
 import { CardIndicador, PaginaBase } from 'components';
 import { useTheme } from 'hooks';
-import ReactApexChart from 'react-apexcharts';
-import { apexOptions, DadosCards } from './indicadores.static';
-import * as styled from './indicadores.styles';
 
 export const Indicadores = () => {
   const theme = useTheme();
@@ -11,8 +15,12 @@ export const Indicadores = () => {
     <PaginaBase titulo="Indicadores">
       <div>
         <styled.DivCards>
-          {DadosCards().map(({ titulo, valor }, index) => {
-            return <CardIndicador titulo={titulo} valor={valor} index={index} />;
+          {DadosCards.map(({ titulo, valor }, index) => {
+            return (
+              <Fragment key={crypto.randomBytes(8).toString('hex')}>
+                <CardIndicador titulo={titulo} valor={valor} index={index} />
+              </Fragment>
+            );
           })}
         </styled.DivCards>
         <div>

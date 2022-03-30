@@ -1,26 +1,24 @@
 import { ApexOptions } from 'apexcharts';
 import { ThemeType } from 'themes';
 
-export const DadosCards = () => {
-  return [
-    {
-      titulo: 'Taxa de ocupação',
-      valor: 10,
-    },
-    {
-      titulo: 'N° de hóspedes',
-      valor: 2,
-    },
-    {
-      titulo: 'Receitas',
-      valor: 2485,
-    },
-    {
-      titulo: 'Despesas',
-      valor: 1300,
-    },
-  ];
-};
+export const DadosCards = [
+  {
+    titulo: 'Taxa de ocupação',
+    valor: 10,
+  },
+  {
+    titulo: 'N° de hóspedes',
+    valor: 2,
+  },
+  {
+    titulo: 'Receitas',
+    valor: 2485,
+  },
+  {
+    titulo: 'Despesas',
+    valor: 1300,
+  },
+];
 
 export const DiasSemanais = [
   'Domingo',

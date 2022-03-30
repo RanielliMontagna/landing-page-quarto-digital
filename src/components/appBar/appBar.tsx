@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { Fragment, memo } from 'react';
 import { MenuDivider, MenuItem } from '@szhsin/react-menu';
 import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
@@ -11,6 +11,7 @@ import { AppActions, useApp } from 'store';
 import * as styled from './appBar.styles';
 import { Tooltip } from '@mui/material';
 import { ItemsMenu } from './appBar.static';
+import crypto from 'crypto';
 
 const AppBar = () => {
   const navigate = useNavigate();
@@ -31,9 +32,9 @@ const AppBar = () => {
         <styled.DivDrawer>
           <DrawerMobile />
         </styled.DivDrawer>
-        <Tooltip title={<Typography>Tema atual do sistema</Typography>} placement="bottom" arrow>
+        <Tooltip title={<Typography>Trocar tema</Typography>} placement="bottom" arrow>
           <styled.DivTema onClick={_handleMudarTema}>
-            {tema === 'escuro' ? <FiMoon size={24} /> : <FiSun size={24} />}
+            {tema === 'escuro' ? <FiSun size={24} /> : <FiMoon size={24} />}
           </styled.DivTema>
         </Tooltip>
       </div>
@@ -57,10 +58,10 @@ const AppBar = () => {
           <>
             {ItemsMenu.map(({ icon, label, route, divider }) => {
               return (
-                <>
+                <Fragment key={crypto.randomBytes(8).toString('hex')}>
                   {divider && <MenuDivider />}
                   <MenuItem onClick={() => navigate(route)}>{MenuItemConteudo(label, icon)}</MenuItem>
-                </>
+                </Fragment>
               );
             })}
           </>
