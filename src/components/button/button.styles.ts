@@ -37,4 +37,27 @@ export const Button = styled.button<{ size: Size; fullWidth: boolean; color?: Co
       transition: 0.5s;
     }
   }
+
+  &.dashed {
+    border: 1px dashed ${({ color }) => getColor({ color })};
+    color: ${({ color }) => getColor({ color })};
+    background-color: transparent;
+
+    &:hover {
+      background-color: ${({ color, theme }) => (color ? getColor({ color }) : theme.coresExtras.preto)};
+      color: ${({ color }) => getContrastColor({ color })};
+      transition: 0.5s;
+    }
+  }
+
+  &.naked {
+    color: ${({ color }) => getColor({ color })};
+    background-color: transparent;
+  }
+
+  &:hover {
+    background-color: ${({ color, theme }) => (color ? getColor({ color }) : theme.coresExtras.preto)};
+    color: ${({ color }) => getContrastColor({ color })};
+    transition: 0.5s;
+  }
 `;
