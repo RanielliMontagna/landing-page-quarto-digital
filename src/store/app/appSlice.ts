@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import type { AppSlice, LoadingType, Notificacao } from './appSlice.types';
+import type { AppSlice, LoadingType, Notificacao, Error } from './appSlice.types';
 
 export const initialState: AppSlice = {
   loading: false,
   tema: localStorage.getItem('tema'),
   notificacao: {},
+  error: null,
 };
 
 const appSlice = createSlice({
@@ -24,6 +25,9 @@ const appSlice = createSlice({
     },
     toggleNotificacao: (state, { payload }: PayloadAction<Notificacao>) => {
       state.notificacao = payload;
+    },
+    handleErrors: (state, { payload }: PayloadAction<Error>) => {
+      state.error = payload;
     },
   },
 });

@@ -1,3 +1,4 @@
+import { TextField } from '@mui/material';
 import styled from 'styled-components';
 
 //Login
@@ -15,6 +16,7 @@ export const DivLogin = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  gap: 16px;
 
   > img {
     padding: 16px 0px 0px 0px;
@@ -30,7 +32,7 @@ export const DivLogin = styled.div`
   }
 `;
 
-export const DivField = styled.div`
+export const Field = styled(TextField)`
   width: 80%;
 
   @media (min-width: 1500px) {
@@ -76,7 +78,7 @@ export const ForgotPassword = styled.div`
 `;
 
 export const ButtonEnter = styled.button`
-  margin: 32px 0px;
+  margin: 16px 0px;
   padding: 10px 0px;
   width: 80%;
   height: 44px;

@@ -1,5 +1,6 @@
-import { Private } from 'components';
 import { FC } from 'react';
+import { Private } from 'components';
+import Public from 'components/layout/public/public';
 
 interface RotaProps {
   element: JSX.Element;
@@ -8,7 +9,7 @@ interface RotaProps {
 
 export const Rota: FC<RotaProps> = ({ element, isPrivate }) => {
   if (isPrivate) return <Private>{element}</Private>;
-  return element;
+  return <Public>{element}</Public>;
 };
 
 export default Rota;

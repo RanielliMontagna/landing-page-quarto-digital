@@ -7,8 +7,11 @@ export type Notificacao = {
   mensagem?: string;
 };
 
+export type Error = unknown;
+
 export type AppSlice = {
   loading: LoadingType;
   tema: string | null;
   notificacao: Notificacao;
+  error: Error;
 };
