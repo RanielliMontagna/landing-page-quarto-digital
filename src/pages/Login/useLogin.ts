@@ -1,6 +1,9 @@
 import { login } from 'service';
+
 import { AppActions } from 'store';
+import { AuthActions } from 'store/auth';
 import { useDispatch } from 'store/hooks';
+
 import { LoginFormValues } from './Login.types';
 
 const useLogin = () => {
@@ -9,9 +12,11 @@ const useLogin = () => {
   const onSubmit = async ({ email, password }: LoginFormValues) => {
     _dispatch(AppActions.toggleLoading(true));
     try {
-      const res = await login(email, password);
+      const { data } = await login(email, password);
 
-      //TODO - continuar login
+      if (data.token) {
+        _dispatch(AuthActions.storeToken(data.token));
+      }
 
       _dispatch(AppActions.toggleLoading(false));
     } catch (error) {

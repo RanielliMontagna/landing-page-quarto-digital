@@ -5,10 +5,12 @@ import clientesSlice from './clientes/clientesSlice';
 import produtosSlice from './produtos/produtosSlice';
 import quartosSlice from './quartos/quartosSlice';
 import servicosSlice from './servicos/servicosSlice';
+import authSlice from './auth/authSlice';
 
 const makeStore = () =>
   configureStore({
     reducer: {
+      Auth: authSlice.reducer,
       App: appSlice.reducer,
       Config: configuracoesSlice.reducer,
       Clientes: clientesSlice.reducer,
