@@ -1,4 +1,4 @@
-import { IoExitOutline, IoPersonOutline, IoSettingsOutline } from 'react-icons/io5';
+import { IoPersonOutline, IoSettingsOutline } from 'react-icons/io5';
 
 export const ItemsMenu = [
   {
@@ -10,11 +10,5 @@ export const ItemsMenu = [
     label: 'Minha conta',
     route: '/minha-conta',
     icon: <IoPersonOutline size={16} />,
-  },
-  {
-    label: 'Sair',
-    route: '/login',
-    icon: <IoExitOutline size={16} />,
-    divider: true,
   },
 ];

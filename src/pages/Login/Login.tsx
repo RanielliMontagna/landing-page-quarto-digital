@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 import * as styled from './Login.styles';
 import { Divider } from 'components';
 
-import { useForm } from 'react-hook-form';
 import useLogin from './useLogin';
 import { LoginFormValues } from './Login.types';
 
@@ -44,6 +44,7 @@ const Login = () => {
           <styled.Field
             label="Senha *"
             error={Boolean(errors?.password)}
+            type="password"
             helperText={errors?.password?.message}
             variant="outlined"
             {...register('password', {

@@ -4,7 +4,7 @@ import '@szhsin/react-menu/dist/index.css';
 import '@szhsin/react-menu/dist/transitions/slide.css';
 import { Menu, MenuItemConteudo, DrawerMobile, Typography } from 'components';
 import { FiMoon, FiSun } from 'react-icons/fi';
-import { IoChevronDownOutline } from 'react-icons/io5';
+import { IoChevronDownOutline, IoExitOutline } from 'react-icons/io5';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { AppActions, useApp } from 'store';
@@ -12,11 +12,13 @@ import * as styled from './appBar.styles';
 import { Tooltip } from '@mui/material';
 import { ItemsMenu } from './appBar.static';
 import crypto from 'crypto';
+import { AuthActions, useAuth } from 'store/auth';
 
 const AppBar = () => {
   const navigate = useNavigate();
   const _dispatch = useDispatch();
   const { tema } = useApp();
+  const { profile } = useAuth();
 
   const _handleMudarTema = () => {
     if (tema === 'escuro') {
@@ -24,6 +26,16 @@ const AppBar = () => {
     } else {
       _dispatch(AppActions.storeTema('escuro'));
     }
+  };
+
+  const _handleSair = () => {
+    _dispatch(AuthActions.storeToken(''));
+    _dispatch(AuthActions.storeIsAuthenticated(false));
+    _dispatch(
+      AppActions.toggleNotificacao({
+        mensagem: 'Deslogado com sucesso!',
+      })
+    );
   };
 
   return (
@@ -44,10 +56,10 @@ const AppBar = () => {
           menuButton={
             <styled.DivMenu>
               <div>
-                <styled.styledAvatar alt="Capivarus Hotel" src="Capivarus Hotel" variant="rounded" />
+                <styled.styledAvatar alt={profile?.nome} src={profile?.nome} variant="rounded" />
               </div>
               <div style={{ padding: '8px', overflow: 'hidden' }}>
-                <styled.TituloPerfil>Capivarus Hotel</styled.TituloPerfil>
+                <styled.TituloPerfil>{profile?.nome}</styled.TituloPerfil>
               </div>
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <IoChevronDownOutline size={16} />
@@ -56,14 +68,15 @@ const AppBar = () => {
           }
         >
           <>
-            {ItemsMenu.map(({ icon, label, route, divider }) => {
+            {ItemsMenu.map(({ icon, label, route }) => {
               return (
                 <Fragment key={crypto.randomBytes(8).toString('hex')}>
-                  {divider && <MenuDivider />}
                   <MenuItem onClick={() => navigate(route)}>{MenuItemConteudo(label, icon)}</MenuItem>
                 </Fragment>
               );
             })}
+            <MenuDivider />
+            <MenuItem onClick={_handleSair}>{MenuItemConteudo('Sair', <IoExitOutline size={16} />)}</MenuItem>
           </>
         </Menu>
       </styled.DivPerfil>

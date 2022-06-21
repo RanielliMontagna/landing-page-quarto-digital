@@ -6,10 +6,20 @@ import actions from '../actions';
 import { useSelector } from 'hooks';
 import { useDispatch } from 'store/hooks';
 import { AppActions } from 'store';
+import { Profile } from '../authSlice.types';
 
 const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const _dispatch = useDispatch();
   const auth = useSelector(({ Auth }) => Auth);
+
+  useEffect(() => {
+    if (auth.token) {
+      const decoded = jwt.decode(String(auth.token));
+      if (decoded) {
+        _dispatch(actions.storeProfile(decoded as Profile));
+      }
+    }
+  }, [auth.token, _dispatch]);
 
   useEffect(() => {
     if (auth.token) {
@@ -37,7 +47,6 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
               })
             );
           } else {
-            console.log(auth.isAuthenticated);
             if (!auth.isAuthenticated) {
               _dispatch(
                 AppActions.toggleNotificacao({
