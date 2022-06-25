@@ -23,7 +23,7 @@ export const Router = () => {
             <Route path="/" element={<LandingPage />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/login" element={<Login />} />
-            <Route path="*" element={<Navigate to="/dashboard" />} />
+            <Route path="*" element={<Navigate to="/login" />} />
           </Route>
         ) : (
           <Route path="/" element={<Private />}>

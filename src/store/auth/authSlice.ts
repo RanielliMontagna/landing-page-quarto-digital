@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import type { AuthSlice, Profile, Token } from './authSlice.types';
+import type { AuthSlice, IProfile, Token } from './authSlice.types';
 
 export const initialState: AuthSlice = {
   token: localStorage.getItem('token') || null,
@@ -22,7 +22,7 @@ const clientesSlice = createSlice({
     storeIsAuthenticated: (state, { payload }: PayloadAction<boolean>) => {
       state.isAuthenticated = payload;
     },
-    storeProfile: (state, { payload }: PayloadAction<Profile>) => {
+    storeProfile: (state, { payload }: PayloadAction<IProfile>) => {
       state.profile = payload;
     },
   },
