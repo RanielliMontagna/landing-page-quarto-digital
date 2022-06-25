@@ -5,4 +5,6 @@ export interface TypographyProps {
   weight?: FontWeight;
   children: React.ReactNode;
   color?: Colors;
+  style?: React.CSSProperties;
+  className?: string;
 }
