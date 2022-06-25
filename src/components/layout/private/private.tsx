@@ -1,13 +1,10 @@
-import { FC, memo } from 'react';
+import { memo } from 'react';
 import { ConfiguracoesProvider, useApp } from 'store';
 import { AppBar, Drawer, Loading } from 'components';
 import * as styled from './private.styles';
+import { Outlet } from 'react-router-dom';
 
-export interface PrivateProps {
-  children: JSX.Element;
-}
-
-const Private: FC<PrivateProps> = ({ children }) => {
+const Private = () => {
   const { loading } = useApp();
 
   return (
@@ -20,7 +17,7 @@ const Private: FC<PrivateProps> = ({ children }) => {
       <ConfiguracoesProvider>
         <styled.DivChildren>
           <AppBar />
-          {children}
+          <Outlet />
         </styled.DivChildren>
       </ConfiguracoesProvider>
     </div>

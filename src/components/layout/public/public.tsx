@@ -1,19 +1,19 @@
-import { FC, memo } from 'react';
+import { memo } from 'react';
+import { Outlet } from 'react-router-dom';
+
 import { useApp } from 'store';
 import { Loading } from 'components';
 import { DivChildren } from './public.styles';
 
-export interface PublicProps {
-  children: JSX.Element;
-}
-
-const Public: FC<PublicProps> = ({ children }) => {
+const Public = () => {
   const { loading } = useApp();
 
   return (
     <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
       {loading && <Loading />}
-      <DivChildren>{children}</DivChildren>
+      <DivChildren>
+        <Outlet />
+      </DivChildren>
     </div>
   );
 };
