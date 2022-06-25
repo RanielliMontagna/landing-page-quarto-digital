@@ -33,8 +33,6 @@ const AppProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
   useEffect(() => {
     const error = app.error as any;
 
-    //TODO: tratar outros tipos de erro
-
     if (error) {
       if ('name' in error && error.name === 'AxiosError') {
         const errorAxios = error as AxiosError;
@@ -47,6 +45,10 @@ const AppProvider: FC<{ children: React.ReactNode }> = ({ children }) => {
           _dispatch(AppActions.handleErrors(null));
           _dispatch(AppActions.toggleLoading(false));
         }, 1000);
+      } else {
+        _dispararNotificacao('Erro não tratado', 'error');
+        _dispatch(AppActions.handleErrors(null));
+        _dispatch(AppActions.toggleLoading(false));
       }
     }
   }, [app.error, _dispararNotificacao, _dispatch]);
