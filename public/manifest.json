@@ -18,8 +18,11 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://www.quarto.digital/",
+  "orientation": "portrait",
+  "lang": "pt-BR",
   "display": "standalone",
   "theme_color": "#384B78",
-  "background_color": "#22252C"
+  "background_color": "#22252C",
+  "prefer_related_applications": false
 }
