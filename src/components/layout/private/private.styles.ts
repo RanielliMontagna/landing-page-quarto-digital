@@ -4,6 +4,7 @@ export const DivChildren = styled.div`
   width: 100%;
   color: ${({ theme }) => theme.cores.secundaria};
   background-color: ${({ theme }) => theme.cores.terciaria};
+  transition: 0.3s ease-in-out;
 `;
 
 export const DivDrawer = styled.div`

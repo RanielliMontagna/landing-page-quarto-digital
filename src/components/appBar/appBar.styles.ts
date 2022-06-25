@@ -7,6 +7,7 @@ export const DivAppBar = styled.div<{ tema: string | null }>`
   height: 60px;
   background-color: ${({ theme, tema }) => (tema === 'escuro' ? theme.coresExtras.pretoAppBar : theme.cores.terciaria)};
   color: ${({ theme }) => theme.cores.secundaria};
+  transition: 0.3s ease-in-out;
   box-shadow: 1px 0px 13px 0px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
@@ -104,7 +105,7 @@ export const MenuItemIcone = styled.div`
 `;
 
 export const MenuItemTitulo = styled.p`
-  fontweight: 300;
+  font-weight: 300;
   color: ${({ theme }) => theme.cores.secundaria};
 `;
 
