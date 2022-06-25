@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { login } from 'service';
 
 import { AppActions } from 'store';
@@ -8,6 +9,7 @@ import { LoginFormValues } from './Login.types';
 
 const useLogin = () => {
   const _dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onSubmit = async ({ email, password }: LoginFormValues) => {
     _dispatch(AppActions.toggleLoading(true));
@@ -15,6 +17,7 @@ const useLogin = () => {
       const { data } = await login(email, password);
 
       if (data.token) {
+        navigate('/');
         _dispatch(AuthActions.storeToken(data.token));
       }
 

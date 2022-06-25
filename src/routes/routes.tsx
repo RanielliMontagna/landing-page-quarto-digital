@@ -4,7 +4,18 @@ import Configuracoes from 'pages/Configuracoes/Configuracoes';
 import { useAuth } from 'store/auth';
 
 // Rotas Privadas
-import { Clientes, Dashboard, Indicadores, Login, MinhaConta, Produtos, Quartos, Servicos, LandingPage } from 'pages';
+import {
+  Clientes,
+  Dashboard,
+  Indicadores,
+  Login,
+  MinhaConta,
+  Produtos,
+  Quartos,
+  Servicos,
+  LandingPage,
+  Erro,
+} from 'pages';
 
 //Rotas Publicas
 import { Contato } from 'pages';
@@ -23,11 +34,12 @@ export const Router = () => {
             <Route path="/" element={<LandingPage />} />
             <Route path="/contato" element={<Contato />} />
             <Route path="/login" element={<Login />} />
-            <Route path="*" element={<Navigate to="/login" />} />
+            <Route path="/erro" element={<Erro />} />
+            <Route path="*" element={<Navigate to="/erro" />} />
           </Route>
         ) : (
           <Route path="/" element={<Private />}>
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<Navigate to="/dashboard" />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/indicadores" element={<Indicadores />} />
             <Route path="/quartos" element={<Quartos />} />
@@ -36,7 +48,8 @@ export const Router = () => {
             <Route path="/servicos" element={<Servicos />} />
             <Route path="/configuracoes" element={<Configuracoes />} />
             <Route path="/minha-conta" element={<MinhaConta />} />
-            <Route path="*" element={<Navigate to="/dashboard" />} />
+            <Route path="/erro" element={<Erro />} />
+            <Route path="*" element={<Navigate to="/erro" />} />
           </Route>
         )}
       </Routes>

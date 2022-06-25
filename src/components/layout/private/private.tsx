@@ -1,22 +1,29 @@
 import { memo } from 'react';
-import { ConfiguracoesProvider, useApp } from 'store';
-import { AppBar, Drawer, Loading } from 'components';
-import * as styled from './private.styles';
 import { Outlet } from 'react-router-dom';
+
+import * as styled from './private.styles';
+
+import { AppBar, Drawer, Loading } from 'components';
+import { ConfiguracoesProvider, useApp } from 'store';
+import { usePathname } from 'utils';
 
 const Private = () => {
   const { loading } = useApp();
+  const pathname = usePathname();
 
   return (
     <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
       {loading && <Loading />}
 
-      <styled.DivDrawer>
-        <Drawer />
-      </styled.DivDrawer>
+      {pathname !== 'erro' && (
+        <styled.DivDrawer>
+          <Drawer />
+        </styled.DivDrawer>
+      )}
+
       <ConfiguracoesProvider>
         <styled.DivChildren>
-          <AppBar />
+          {pathname !== 'erro' && <AppBar />}
           <Outlet />
         </styled.DivChildren>
       </ConfiguracoesProvider>
