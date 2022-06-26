@@ -24,7 +24,7 @@ const TitleBar: FC<TitleBarProps> = ({ rota }) => {
           <styled.Opcoes onClick={() => navigate('/contato')}>
             Contato {rota === 'contato' && <styled.Sublinhado />}
           </styled.Opcoes>
-          <styled.Opcoes onClick={() => navigate('/login')}>
+          <styled.Opcoes onClick={() => window.open('https://app.quarto.digital/', '_blank')}>
             Entrar {rota === 'login' && <styled.Sublinhado />}
           </styled.Opcoes>
         </styled.DivOpcoes>
