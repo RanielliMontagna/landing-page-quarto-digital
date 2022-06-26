@@ -4,7 +4,7 @@ import { Copyright, DivFooter, RedeSocial, RedesSociais } from './footer.styles'
 
 const Footer = () => {
   return (
-    <DivFooter id="footer">
+    <DivFooter id="footer" data-aos="fade" data-aos-anchor-placement="top" data-aos-duration="1000">
       <div style={{ display: 'flex', alignItems: 'center', fontSize: '32px' }}>
         <div className="quarto">Quarto</div>
         <div className="digital">Digital</div>

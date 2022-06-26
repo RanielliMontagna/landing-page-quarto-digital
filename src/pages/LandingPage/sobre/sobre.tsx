@@ -3,7 +3,7 @@ import * as styled from './sobre.styles';
 
 const Sobre = () => {
   return (
-    <styled.Sobre id="sobre">
+    <styled.Sobre id="sobre" data-aos="fade-up" data-aos-duration="3000">
       <ConteudoLanding
         titulo="Sobre nós"
         texto={

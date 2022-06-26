@@ -7,7 +7,7 @@ import * as styled from './segmentos.styles';
 
 const Segmentos = () => {
   return (
-    <styled.Segmentos id="segmento">
+    <styled.Segmentos id="segmento" data-aos="fade-up" data-aos-duration="3000">
       <div>
         <h1>
           O software de <span>gestão hoteleira</span>
