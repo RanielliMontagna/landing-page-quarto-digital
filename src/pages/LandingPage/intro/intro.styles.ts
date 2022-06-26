@@ -8,13 +8,13 @@ export const Intro = styled.div`
   flex-direction: column;
   color: ${({ theme }) => theme.coresExtras.branco};
   font-size: 4vw;
-  background-image: url('/assets/images/quarto.jpg');
+  background-image: url('/static/images/quarto.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
 
   @media (max-width: 576px) {
-    background-image: url('/assets/images/quartoMobile.jpg');
+    background-image: url('/static/images/quartoMobile.jpg');
   }
 `;
 

@@ -5,7 +5,7 @@ import Botoes from './botoes/botoes';
 interface DrawerProps {}
 
 const Drawer: FC<DrawerProps> = () => {
-  const logo = '/assets/logo/logoSimplificadoBranco.svg';
+  const logo = '/static/logo/logoSimplificadoBranco.svg';
 
   return (
     <styled.DivMenu>
