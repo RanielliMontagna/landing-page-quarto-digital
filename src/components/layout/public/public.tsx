@@ -9,7 +9,7 @@ const Public = () => {
   const { loading } = useApp();
 
   return (
-    <div style={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
+    <div style={{ display: 'flex', overflow: 'hidden' }}>
       {loading && <Loading />}
       <DivChildren>
         <Outlet />

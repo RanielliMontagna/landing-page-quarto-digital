@@ -1,3 +1,4 @@
+import { Link } from 'react-scroll';
 import { FiArrowDown } from 'react-icons/fi';
 import * as styled from './intro.styles';
 
@@ -12,11 +13,11 @@ const Intro = () => {
         Digital.
       </styled.Descricao>
       <styled.DivArrow>
-        <a arial-label='sobre' href="#sobre" style={{ color: 'inherit' }}>
+        <Link to="sobre" aria-label="Sobre" href="sobre" smooth={true} offset={0}>
           <styled.SaibaMais>
             <FiArrowDown size={32} />
           </styled.SaibaMais>
-        </a>
+        </Link>
       </styled.DivArrow>
     </styled.Intro>
   );

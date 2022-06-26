@@ -15,7 +15,6 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
   }
 
   body, html {
-    height: 100vh;
     background-color: ${({ theme }) => theme.cores.secundaria};
   }
 
