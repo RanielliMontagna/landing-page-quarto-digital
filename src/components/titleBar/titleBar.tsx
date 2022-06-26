@@ -12,6 +12,8 @@ interface TitleBarProps {
 const TitleBar: FC<TitleBarProps> = ({ rota }) => {
   const navigate = useNavigate();
 
+  const _handleLogin = () => window.open('https://app.quarto.digital/', '_blank');
+
   return (
     <styled.TitleBar>
       <styled.DivInterna>
@@ -24,9 +26,7 @@ const TitleBar: FC<TitleBarProps> = ({ rota }) => {
           <styled.Opcoes onClick={() => navigate('/contato')}>
             Contato {rota === 'contato' && <styled.Sublinhado />}
           </styled.Opcoes>
-          <styled.Opcoes onClick={() => window.open('https://app.quarto.digital/', '_blank')}>
-            Entrar {rota === 'login' && <styled.Sublinhado />}
-          </styled.Opcoes>
+          <styled.Opcoes onClick={_handleLogin}>Entrar {rota === 'login' && <styled.Sublinhado />}</styled.Opcoes>
         </styled.DivOpcoes>
         <styled.DivOpcoes className="menuMobile">
           <Menu
@@ -42,7 +42,7 @@ const TitleBar: FC<TitleBarProps> = ({ rota }) => {
               {rota !== 'contato' && (
                 <MenuItem onClick={() => navigate('/contato')}>{MenuItemConteudo('Contato')}</MenuItem>
               )}
-              <MenuItem onClick={() => navigate('/login')}>{MenuItemConteudo('Login')}</MenuItem>
+              <MenuItem onClick={_handleLogin}>{MenuItemConteudo('Entrar')}</MenuItem>
             </>
           </Menu>
         </styled.DivOpcoes>

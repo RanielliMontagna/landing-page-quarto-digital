@@ -8,7 +8,8 @@ import { App } from './App';
 
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-require('dotenv').config();
+import '@szhsin/react-menu/dist/index.css';
+import '@szhsin/react-menu/dist/transitions/slide.css';
 
 if (process.env.REACT_APP_ENV !== 'development') {
   Sentry.init({
