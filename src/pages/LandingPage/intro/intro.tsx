@@ -12,7 +12,7 @@ const Intro = () => {
         Digital.
       </styled.Descricao>
       <styled.DivArrow>
-        <a href="#sobre" style={{ color: 'inherit' }}>
+        <a arial-label='sobre' href="#sobre" style={{ color: 'inherit' }}>
           <styled.SaibaMais>
             <FiArrowDown size={32} />
           </styled.SaibaMais>
