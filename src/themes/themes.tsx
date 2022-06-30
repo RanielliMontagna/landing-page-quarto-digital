@@ -1,4 +1,3 @@
-import { useApp } from 'store';
 import { ThemeProvider } from 'styled-components';
 import { azulQD, brancoQD, cinzaClaro, cinzaEscuro, danger, pretoAzulado, pretoQD, success, warning } from './cores';
 import { tamanhoFonte } from './fontes';
@@ -43,6 +42,5 @@ export const _temaEscuro = {
 export type ThemeType = typeof _temaClaro;
 
 export const Theme: React.FC = ({ children }) => {
-  const { tema } = useApp();
-  return <ThemeProvider theme={tema === 'escuro' ? _temaEscuro : _temaClaro}>{children}</ThemeProvider>;
+  return <ThemeProvider theme={_temaEscuro}>{children}</ThemeProvider>;
 };
