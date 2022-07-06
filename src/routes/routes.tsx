@@ -14,7 +14,7 @@ export const Router = () => {
           <Route path="/" element={<LandingPage />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/erro" element={<Erro />} />
-          <Route path="*" element={<Navigate to="/erro" />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
     </BrowserRouter>
