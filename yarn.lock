@@ -10204,11 +10204,6 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rm-design-system@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/rm-design-system/-/rm-design-system-0.1.0.tgz#4457d6d48f47e4fbbb83cf11515e5aacde1d2dcb"
-  integrity sha512-7eAoKL/+CwvjGw7nHxEpenvhQqMX6pLoDi3o2mcrBx0wcdxVDjUj/A3cO2ntKCW8HYCvoab9o0FCZSA9AwGNdA==
-
 rollup-plugin-babel@^4.3.3:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-babel/-/rollup-plugin-babel-4.4.0.tgz#d15bd259466a9d1accbdb2fe2fff17c52d030acb"
