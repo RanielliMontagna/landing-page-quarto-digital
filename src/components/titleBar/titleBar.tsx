@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import * as styled from './titleBar.styles';
 
 interface TitleBarProps {
-  rota: 'home' | 'contato' | 'login';
+  rota: 'home' | 'login';
 }
 
 const TitleBar: FC<TitleBarProps> = ({ rota }) => {
@@ -23,9 +23,6 @@ const TitleBar: FC<TitleBarProps> = ({ rota }) => {
         </div>
         <styled.DivOpcoes className="menuWeb">
           <styled.Opcoes onClick={() => navigate('/')}>Home {rota === 'home' && <styled.Sublinhado />}</styled.Opcoes>
-          <styled.Opcoes onClick={() => navigate('/contato')}>
-            Contato {rota === 'contato' && <styled.Sublinhado />}
-          </styled.Opcoes>
           <styled.Opcoes onClick={_handleLogin}>Entrar {rota === 'login' && <styled.Sublinhado />}</styled.Opcoes>
         </styled.DivOpcoes>
         <styled.DivOpcoes className="menuMobile">
@@ -39,9 +36,6 @@ const TitleBar: FC<TitleBarProps> = ({ rota }) => {
           >
             <>
               {rota !== 'home' && <MenuItem onClick={() => navigate('/')}>{MenuItemConteudo('Home')}</MenuItem>}
-              {rota !== 'contato' && (
-                <MenuItem onClick={() => navigate('/contato')}>{MenuItemConteudo('Contato')}</MenuItem>
-              )}
               <MenuItem onClick={_handleLogin}>{MenuItemConteudo('Entrar')}</MenuItem>
             </>
           </Menu>
