@@ -1,20 +1,23 @@
-# Projeto Template - React + Typescript
+# Quarto Digital
 
-## Comandos úteis
+Landing page para o Quarto Digital, um projeto de gestão hotelaria que visa a otimização de processos e a redução de custos.
 
-Para rodar:
+## 🚀 Tecnologias
 
-### `yarn start`
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-Executa o aplicativo no modo de desenvolvimento.
-Abra [http://localhost:3000](http://localhost:3000) para vizualizar no navegador.
+- [React](https://reactjs.org) - Uma biblioteca JavaScript para criar interfaces de usuário
+- [TypeScript](https://www.typescriptlang.org/) - TypeScript é um superconjunto de JavaScript desenvolvido pela Microsoft que adiciona tipagem e alguns outros recursos a linguagem
+- [Emotion](https://emotion.sh/) - Biblioteca para estilização de componentes
+- [React Icons](https://react-icons.github.io/react-icons/) - Biblioteca de ícones para React
+- [React Router](https://reactrouter.com/) - Biblioteca para criação de rotas
 
-A página será recarregada se você fizer edições. \
-Você também verá quaisquer erros de lint no console.
+## 💻 Como executar
 
-### `yarn build`
+- Clone o repositório
+- Instale as dependências com `yarn`
+- Inicie o servidor com `yarn start`
 
-Compila o aplicativo para produção na pasta `build`. \
-Ele agrupa corretamente o React no modo de produção e otimiza a construção para o melhor desempenho.
+## 📝 Autor
 
-#### Feito com carinho by <b>Ranielli Montagna</b> ❤
+- [@raniellimontagna](https://www.github.com/raniellimontagna)
